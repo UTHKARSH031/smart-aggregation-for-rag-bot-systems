@@ -1,0 +1,3639 @@
+{
+  "dataset": "FinanceBench",
+  "num_documents": 45,
+  "num_questions_tested": 75,
+  "total_chunks": 46522,
+  "baseline_accuracy": {
+    "fixed-512": 0.8533333333333334,
+    "element-based": 0.8533333333333334
+  },
+  "method_a": {
+    "accuracy": 0.9466666666666667,
+    "avg_latency_s": 19.278640832901,
+    "token_stats": {
+      "total_input_tokens": 3110575,
+      "total_chunk_tokens": 12442291,
+      "avg_output_tokens_per_query": 3331.12,
+      "compression_ratio": 3735.1674511875885,
+      "by_stage": {
+        "retrieval": {
+          "output_tokens": 32040
+        },
+        "deduplication": {
+          "output_tokens": 19224
+        },
+        "compression_stage": {
+          "output_tokens": 5340
+        },
+        "reranking": {
+          "output_tokens": 5340
+        }
+      }
+    },
+    "timing_stats": {
+      "retrieval_time": 8.945939064025879,
+      "dedup_time": 0.09767007827758789,
+      "rerank_time": 1436.6931977272034,
+      "mmr_time": 0.15673089027404785
+    },
+    "chunk_distribution": {
+      "fixed-128": 24320,
+      "fixed-256": 12169,
+      "fixed-512": 6096,
+      "element-based": 3937
+    },
+    "detailed_results": [
+      {
+        "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+        "output_tokens": 4433,
+        "metrics": {
+          "precision@5": 0.8,
+          "recall@5": 4.0,
+          "f1@5": 1.3333333333333335,
+          "precision@10": 0.6,
+          "recall@10": 6.0,
+          "f1@10": 1.0909090909090908,
+          "ndcg@5": 0.9047172294870751,
+          "ndcg@10": 0.8798540966214204,
+          "map": 4.372222222222222
+        },
+        "timing": {
+          "step1_time": 0.11800456047058105,
+          "step2_time": 0.0027091503143310547,
+          "step3_time": 18.137664079666138,
+          "step4_time": 0.002321958541870117,
+          "total_time": 18.26076364517212
+        },
+        "latency": 18.26076364517212
+      },
+      {
+        "question": "Assume that you are a public equities analyst. Answer the following question by primarily using information that is shown in the balance sheet: what is the year end FY2018 net PPNE for 3M? Answer in USD billions.",
+        "output_tokens": 3010,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.7,
+          "recall@10": 7.0,
+          "f1@10": 1.2727272727272725,
+          "ndcg@5": 0.9469024295259745,
+          "ndcg@10": 0.9103499485143788,
+          "map": 5.430952380952381
+        },
+        "timing": {
+          "step1_time": 0.10598945617675781,
+          "step2_time": 0.0013375282287597656,
+          "step3_time": 20.07367515563965,
+          "step4_time": 0.0015795230865478516,
+          "total_time": 20.18264102935791
+        },
+        "latency": 20.18264102935791
+      },
+      {
+        "question": "Is 3M a capital-intensive business based on FY2022 data?",
+        "output_tokens": 2688,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.5,
+          "recall@10": 5.0,
+          "f1@10": 0.9090909090909091,
+          "ndcg@5": 0.6509209298071326,
+          "ndcg@10": 0.6732446972893747,
+          "map": 2.373015873015873
+        },
+        "timing": {
+          "step1_time": 0.10953688621520996,
+          "step2_time": 0.0011715888977050781,
+          "step3_time": 16.319088459014893,
+          "step4_time": 0.0014655590057373047,
+          "total_time": 16.431317567825317
+        },
+        "latency": 16.431317567825317
+      },
+      {
+        "question": "What drove operating margin change as of FY2022 for 3M? If operating margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 6803,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9134015924715543,
+          "map": 2.375
+        },
+        "timing": {
+          "step1_time": 0.11104464530944824,
+          "step2_time": 0.0012888908386230469,
+          "step3_time": 18.159741640090942,
+          "step4_time": 0.0010213851928710938,
+          "total_time": 18.273149490356445
+        },
+        "latency": 18.273149490356445
+      },
+      {
+        "question": "If we exclude the impact of M&A, which segment has dragged down 3M's overall growth in 2022?",
+        "output_tokens": 5484,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.7,
+          "recall@10": 7.0,
+          "f1@10": 1.2727272727272725,
+          "ndcg@5": 0.9674679834891693,
+          "ndcg@10": 0.9256850023120645,
+          "map": 5.658730158730159
+        },
+        "timing": {
+          "step1_time": 0.12419462203979492,
+          "step2_time": 0.0012097358703613281,
+          "step3_time": 18.65403389930725,
+          "step4_time": 0.003543376922607422,
+          "total_time": 18.783039808273315
+        },
+        "latency": 18.783039808273315
+      },
+      {
+        "question": "Does 3M have a reasonably healthy liquidity profile based on its quick ratio for Q2 of FY2023? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+        "output_tokens": 3747,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.4,
+          "recall@10": 4.0,
+          "f1@10": 0.7272727272727273,
+          "ndcg@5": 0.8503449055347546,
+          "ndcg@10": 0.8036070421010475,
+          "map": 2.4
+        },
+        "timing": {
+          "step1_time": 0.14136862754821777,
+          "step2_time": 0.0011620521545410156,
+          "step3_time": 16.055139303207397,
+          "step4_time": 0.001255035400390625,
+          "total_time": 16.19897770881653
+        },
+        "latency": 16.19897770881653
+      },
+      {
+        "question": "Which debt securities are registered to trade on a national securities exchange under 3M's name as of Q2 of 2023?",
+        "output_tokens": 4507,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 0.6509209298071326,
+          "ndcg@10": 0.6546154994739983,
+          "map": 1.4285714285714286
+        },
+        "timing": {
+          "step1_time": 0.13485956192016602,
+          "step2_time": 0.0011801719665527344,
+          "step3_time": 16.71941375732422,
+          "step4_time": 0.0009200572967529297,
+          "total_time": 16.856436729431152
+        },
+        "latency": 16.856436729431152
+      },
+      {
+        "question": "Does 3M maintain a stable trend of dividend distribution?",
+        "output_tokens": 3200,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5249810332008933,
+          "map": 0.6666666666666666
+        },
+        "timing": {
+          "step1_time": 0.1150977611541748,
+          "step2_time": 0.0010724067687988281,
+          "step3_time": 20.670430898666382,
+          "step4_time": 0.002680063247680664,
+          "total_time": 20.78941512107849
+        },
+        "latency": 20.78941512107849
+      },
+      {
+        "question": "What is the FY2019 fixed asset turnover ratio for Activision Blizzard? Fixed asset turnover ratio is defined as: FY2019 revenue / (average PP&E between FY2018 and FY2019). Round your answer to two decimal places. Base your judgments on the information provided primarily in the statement of income and the statement of financial position.",
+        "output_tokens": 3471,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 1.0,
+          "recall@10": 10.0,
+          "f1@10": 1.8181818181818181,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 10.0
+        },
+        "timing": {
+          "step1_time": 0.1817607879638672,
+          "step2_time": 0.0013496875762939453,
+          "step3_time": 30.205338954925537,
+          "step4_time": 0.0029175281524658203,
+          "total_time": 30.39142608642578
+        },
+        "latency": 30.39142608642578
+      },
+      {
+        "question": "What is the FY2017 - FY2019 3 year average of capex as a % of revenue for Activision Blizzard? Answer in units of percents and round to one decimal place. Calculate (or extract) the answer from the statement of income and the cash flow statement.",
+        "output_tokens": 2048,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 0.9,
+          "recall@10": 9.0,
+          "f1@10": 1.6363636363636362,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9937947856332161,
+          "map": 8.78888888888889
+        },
+        "timing": {
+          "step1_time": 0.18594694137573242,
+          "step2_time": 0.0012865066528320312,
+          "step3_time": 26.69344973564148,
+          "step4_time": 0.002660512924194336,
+          "total_time": 26.88340735435486
+        },
+        "latency": 26.88340735435486
+      },
+      {
+        "question": "You are an investment banker and your only resource(s) to answer the following question is (are): the statement of financial position and the cash flow statement. Here's the question: what is the FY2015 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places.",
+        "output_tokens": 3604,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.0,
+          "recall@10": 0.0,
+          "f1@10": 0,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0,
+          "map": 0.0
+        },
+        "timing": {
+          "step1_time": 0.18992233276367188,
+          "step2_time": 0.0013668537139892578,
+          "step3_time": 28.52653670310974,
+          "step4_time": 0.002794981002807617,
+          "total_time": 28.720686197280884
+        },
+        "latency": 28.720686197280884
+      },
+      {
+        "question": "What is Adobe's year-over-year change in unadjusted operating income from FY2015 to FY2016 (in units of percents and round to one decimal place)? Give a solution to the question by using the income statement.",
+        "output_tokens": 2560,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5249810332008933,
+          "map": 0.6666666666666666
+        },
+        "timing": {
+          "step1_time": 0.1963362693786621,
+          "step2_time": 0.0015070438385009766,
+          "step3_time": 23.020989656448364,
+          "step4_time": 0.0047054290771484375,
+          "total_time": 23.223605394363403
+        },
+        "latency": 23.223605394363403
+      },
+      {
+        "question": "What is the FY2017 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places. Please utilize information provided primarily within the balance sheet and the cash flow statement.",
+        "output_tokens": 5839,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5,
+          "map": 0.3333333333333333
+        },
+        "timing": {
+          "step1_time": 0.11663699150085449,
+          "step2_time": 0.0012183189392089844,
+          "step3_time": 17.343485593795776,
+          "step4_time": 0.0018694400787353516,
+          "total_time": 17.463268756866455
+        },
+        "latency": 17.463268756866455
+      },
+      {
+        "question": "Does Adobe have an improving operating margin profile as of FY2022? If operating margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 3863,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 0.6309297535714575,
+          "ndcg@10": 0.5802792108518124,
+          "map": 0.75
+        },
+        "timing": {
+          "step1_time": 0.10328936576843262,
+          "step2_time": 0.0012521743774414062,
+          "step3_time": 17.86059045791626,
+          "step4_time": 0.0014019012451171875,
+          "total_time": 17.966585397720337
+        },
+        "latency": 17.966585397720337
+      },
+      {
+        "question": "Does Adobe have an improving Free cashflow conversion as of FY2022?",
+        "output_tokens": 1920,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.31546487678572877,
+          "map": 0.125
+        },
+        "timing": {
+          "step1_time": 0.11924457550048828,
+          "step2_time": 0.0011074542999267578,
+          "step3_time": 19.26434874534607,
+          "step4_time": 0.0014281272888183594,
+          "total_time": 19.386184692382812
+        },
+        "latency": 19.386184692382812
+      },
+      {
+        "question": "What is the quantity of restructuring costs directly outlined in AES Corporation's income statements for FY2022? If restructuring costs are not explicitly outlined then state 0.",
+        "output_tokens": 2048,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.41183384043543503,
+          "map": 0.41666666666666663
+        },
+        "timing": {
+          "step1_time": 0.10773706436157227,
+          "step2_time": 0.0011737346649169922,
+          "step3_time": 17.929983854293823,
+          "step4_time": 0.0029561519622802734,
+          "total_time": 18.04190731048584
+        },
+        "latency": 18.04190731048584
+      },
+      {
+        "question": "Roughly how many times has AES Corporation sold its inventory in FY2022? Calculate inventory turnover ratio for the FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+        "output_tokens": 4994,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 0.9,
+          "recall@10": 9.0,
+          "f1@10": 1.6363636363636362,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9971876401972101,
+          "map": 8.9
+        },
+        "timing": {
+          "step1_time": 0.10893702507019043,
+          "step2_time": 0.001001596450805664,
+          "step3_time": 19.47195863723755,
+          "step4_time": 0.0012423992156982422,
+          "total_time": 19.583191871643066
+        },
+        "latency": 19.583191871643066
+      },
+      {
+        "question": "Based on the information provided primarily in the statement of financial position and the statement of income, what is AES's FY2022 return on assets (ROA)? ROA is defined as: FY2022 net income / (average total assets between FY2021 and FY2022). Round your answer to two decimal places.",
+        "output_tokens": 2489,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 0.6509209298071326,
+          "ndcg@10": 0.6546154994739983,
+          "map": 1.4285714285714286
+        },
+        "timing": {
+          "step1_time": 0.11081242561340332,
+          "step2_time": 0.0013806819915771484,
+          "step3_time": 19.16782784461975,
+          "step4_time": 0.0029754638671875,
+          "total_time": 19.283053636550903
+        },
+        "latency": 19.283053636550903
+      },
+      {
+        "question": "What is Amazon's FY2017 days payable outstanding (DPO)? DPO is defined as: 365 * (average accounts payable between FY2016 and FY2017) / (FY2017 COGS + change in inventory between FY2016 and FY2017). Round your answer to two decimal places. Address the question by using the line items and information shown within the balance sheet and the P&L statement.",
+        "output_tokens": 3715,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 0.9,
+          "recall@10": 9.0,
+          "f1@10": 1.6363636363636362,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9971876401972101,
+          "map": 8.9
+        },
+        "timing": {
+          "step1_time": 0.11055493354797363,
+          "step2_time": 0.0012946128845214844,
+          "step3_time": 20.078672409057617,
+          "step4_time": 0.0013756752014160156,
+          "total_time": 20.19194984436035
+        },
+        "latency": 20.19194984436035
+      },
+      {
+        "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+        "output_tokens": 3960,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.6,
+          "recall@10": 6.0,
+          "f1@10": 1.0909090909090908,
+          "ndcg@5": 0.7328286204777911,
+          "ndcg@10": 0.7519774273298493,
+          "map": 3.6436507936507936
+        },
+        "timing": {
+          "step1_time": 0.1104421615600586,
+          "step2_time": 0.0010762214660644531,
+          "step3_time": 18.104934215545654,
+          "step4_time": 0.0014345645904541016,
+          "total_time": 18.217939853668213
+        },
+        "latency": 18.217939853668213
+      },
+      {
+        "question": "By drawing conclusions from the information stated only in the income statement, what is Amazon's FY2019 net income attributable to shareholders (in USD millions)?",
+        "output_tokens": 3075,
+        "metrics": {
+          "precision@5": 0.8,
+          "recall@5": 4.0,
+          "f1@5": 1.3333333333333335,
+          "precision@10": 0.6,
+          "recall@10": 6.0,
+          "f1@10": 1.0909090909090908,
+          "ndcg@5": 0.7606395682357036,
+          "ndcg@10": 0.7859363362324141,
+          "map": 4.180952380952381
+        },
+        "timing": {
+          "step1_time": 0.1107795238494873,
+          "step2_time": 0.0011441707611083984,
+          "step3_time": 16.673039436340332,
+          "step4_time": 0.0012886524200439453,
+          "total_time": 16.78630781173706
+        },
+        "latency": 16.78630781173706
+      },
+      {
+        "question": "What is Amcor's year end FY2020 net AR (in USD millions)? Address the question by adopting the perspective of a financial analyst who can only use the details shown within the balance sheet.",
+        "output_tokens": 4853,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 0.5,
+          "recall@10": 5.0,
+          "f1@10": 0.9090909090909091,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 5.0
+        },
+        "timing": {
+          "step1_time": 0.10712981224060059,
+          "step2_time": 0.001215219497680664,
+          "step3_time": 15.834310531616211,
+          "step4_time": 0.0013756752014160156,
+          "total_time": 15.944083213806152
+        },
+        "latency": 15.944083213806152
+      },
+      {
+        "question": "What was the key agenda of the AMCOR's 8k filing dated 1st July 2022?",
+        "output_tokens": 2442,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 1.0
+        },
+        "timing": {
+          "step1_time": 0.09678435325622559,
+          "step2_time": 0.000989675521850586,
+          "step3_time": 13.99186396598816,
+          "step4_time": 0.002719402313232422,
+          "total_time": 14.09241271018982
+        },
+        "latency": 14.09241271018982
+      },
+      {
+        "question": "Has AMCOR's quick ratio improved or declined between FY2023 and FY2022? If the quick ratio is not something that a financial analyst would ask about a company like this, then state that and explain why.",
+        "output_tokens": 2307,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 0.9197207891481876,
+          "ndcg@10": 0.8451850618939637,
+          "map": 2.0
+        },
+        "timing": {
+          "step1_time": 0.10862326622009277,
+          "step2_time": 0.00131988525390625,
+          "step3_time": 15.835296869277954,
+          "step4_time": 0.0013380050659179688,
+          "total_time": 15.946635007858276
+        },
+        "latency": 15.946635007858276
+      },
+      {
+        "question": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?",
+        "output_tokens": 2831,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.2890648263178879,
+          "map": 0.1
+        },
+        "timing": {
+          "step1_time": 0.10417962074279785,
+          "step2_time": 0.0013158321380615234,
+          "step3_time": 18.46855139732361,
+          "step4_time": 0.0015642642974853516,
+          "total_time": 18.57566499710083
+        },
+        "latency": 18.57566499710083
+      },
+      {
+        "question": "What industry does AMCOR primarily operate in?",
+        "output_tokens": 2661,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 0.5,
+          "ndcg@10": 0.5267175784514114,
+          "map": 0.919047619047619
+        },
+        "timing": {
+          "step1_time": 0.1056203842163086,
+          "step2_time": 0.0008339881896972656,
+          "step3_time": 15.427451133728027,
+          "step4_time": 0.002760171890258789,
+          "total_time": 15.536719799041748
+        },
+        "latency": 15.536719799041748
+      },
+      {
+        "question": "Does AMCOR have an improving gross margin profile as of FY2023? If gross margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 3810,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.38685280723454163,
+          "ndcg@10": 0.38685280723454163,
+          "map": 0.2
+        },
+        "timing": {
+          "step1_time": 0.11326360702514648,
+          "step2_time": 0.001268148422241211,
+          "step3_time": 16.427658557891846,
+          "step4_time": 0.0012924671173095703,
+          "total_time": 16.543540000915527
+        },
+        "latency": 16.543540000915527
+      },
+      {
+        "question": "What is the nature & purpose of AMCOR's restructuring liability as oF Q2 of FY2023 close?",
+        "output_tokens": 3157,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3010299956639812,
+          "map": 0.1111111111111111
+        },
+        "timing": {
+          "step1_time": 0.10651946067810059,
+          "step2_time": 0.0014464855194091797,
+          "step3_time": 18.157093048095703,
+          "step4_time": 0.0030667781829833984,
+          "total_time": 18.26818537712097
+        },
+        "latency": 18.26818537712097
+      },
+      {
+        "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+        "output_tokens": 5132,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.5,
+          "recall@10": 5.0,
+          "f1@10": 0.9090909090909091,
+          "ndcg@5": 0.9469024295259745,
+          "ndcg@10": 0.8954442351097147,
+          "map": 3.6714285714285713
+        },
+        "timing": {
+          "step1_time": 0.10723567008972168,
+          "step2_time": 0.0013382434844970703,
+          "step3_time": 16.886516094207764,
+          "step4_time": 0.0014014244079589844,
+          "total_time": 16.996543169021606
+        },
+        "latency": 16.996543169021606
+      },
+      {
+        "question": "How much was the Real change in Sales for AMCOR in FY 2023 vs FY 2022, if we exclude the impact of FX movement, passthrough costs and one-off items?",
+        "output_tokens": 2409,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.4,
+          "recall@10": 4.0,
+          "f1@10": 0.7272727272727273,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.8988898126139723,
+          "map": 3.0
+        },
+        "timing": {
+          "step1_time": 0.15875625610351562,
+          "step2_time": 0.0012383460998535156,
+          "step3_time": 16.21676254272461,
+          "step4_time": 0.001531839370727539,
+          "total_time": 16.378350973129272
+        },
+        "latency": 16.378350973129272
+      },
+      {
+        "question": "Answer the following question as if you are an equity research analyst and have lost internet connection so you do not have access to financial metric providers. According to the details clearly outlined within the P&L statement and the statement of cash flows, what is the FY2015 depreciation and amortization (D&A from cash flow statement) % margin for AMD?",
+        "output_tokens": 3416,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 0.9674679834891693,
+          "ndcg@10": 0.9674679834891693,
+          "map": 2.75
+        },
+        "timing": {
+          "step1_time": 0.11053109169006348,
+          "step2_time": 0.0015254020690917969,
+          "step3_time": 19.563701152801514,
+          "step4_time": 0.0014870166778564453,
+          "total_time": 19.677306175231934
+        },
+        "latency": 19.677306175231934
+      },
+      {
+        "question": "Does AMD have a reasonably healthy liquidity profile based on its quick ratio for FY22? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+        "output_tokens": 3405,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.2890648263178879,
+          "map": 0.1
+        },
+        "timing": {
+          "step1_time": 0.10367417335510254,
+          "step2_time": 0.0012843608856201172,
+          "step3_time": 18.894315481185913,
+          "step4_time": 0.0011093616485595703,
+          "total_time": 19.000434637069702
+        },
+        "latency": 19.000434637069702
+      },
+      {
+        "question": "What are the major products and services that AMD sells as of FY22?",
+        "output_tokens": 4276,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.4,
+          "recall@10": 4.0,
+          "f1@10": 0.7272727272727273,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9447176050778178,
+          "map": 3.4
+        },
+        "timing": {
+          "step1_time": 0.10200071334838867,
+          "step2_time": 0.0011610984802246094,
+          "step3_time": 15.340645790100098,
+          "step4_time": 0.0027320384979248047,
+          "total_time": 15.446597576141357
+        },
+        "latency": 15.446597576141357
+      },
+      {
+        "question": "What drove revenue change as of the FY22 for AMD?",
+        "output_tokens": 2357,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.8175295903539445,
+          "map": 1.2857142857142856
+        },
+        "timing": {
+          "step1_time": 0.10777401924133301,
+          "step2_time": 0.001085042953491211,
+          "step3_time": 15.214621543884277,
+          "step4_time": 0.0012347698211669922,
+          "total_time": 15.324768781661987
+        },
+        "latency": 15.324768781661987
+      },
+      {
+        "question": "What drove operating margin change as of the FY22 for AMD? If operating margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 2101,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071871080222,
+          "map": 0.16666666666666666
+        },
+        "timing": {
+          "step1_time": 0.11292338371276855,
+          "step2_time": 0.0013880729675292969,
+          "step3_time": 18.144252061843872,
+          "step4_time": 0.0016579627990722656,
+          "total_time": 18.260274171829224
+        },
+        "latency": 18.260274171829224
+      },
+      {
+        "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+        "output_tokens": 2620,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.0,
+          "recall@10": 0.0,
+          "f1@10": 0,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0,
+          "map": 0.0
+        },
+        "timing": {
+          "step1_time": 0.10849332809448242,
+          "step2_time": 0.0014455318450927734,
+          "step3_time": 16.191587686538696,
+          "step4_time": 0.0015263557434082031,
+          "total_time": 16.30311608314514
+        },
+        "latency": 16.30311608314514
+      },
+      {
+        "question": "From FY21 to FY22, excluding Embedded, in which AMD reporting segment did sales proportionally increase the most?",
+        "output_tokens": 3659,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 0.43067655807339306,
+          "ndcg@10": 0.45749452618986164,
+          "map": 0.5
+        },
+        "timing": {
+          "step1_time": 0.1106867790222168,
+          "step2_time": 0.0013461112976074219,
+          "step3_time": 16.740002393722534,
+          "step4_time": 0.0034203529357910156,
+          "total_time": 16.855573654174805
+        },
+        "latency": 16.855573654174805
+      },
+      {
+        "question": "Did AMD report customer concentration in FY22?",
+        "output_tokens": 5581,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 0.6509209298071326,
+          "ndcg@10": 0.6338412308988606,
+          "map": 1.3
+        },
+        "timing": {
+          "step1_time": 0.11005115509033203,
+          "step2_time": 0.0008015632629394531,
+          "step3_time": 16.255977869033813,
+          "step4_time": 0.0015347003936767578,
+          "total_time": 16.368417739868164
+        },
+        "latency": 16.368417739868164
+      },
+      {
+        "question": "Which debt securities are registered to trade on a national securities exchange under American Express' name as of 2022?",
+        "output_tokens": 6747,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.5,
+          "recall@10": 5.0,
+          "f1@10": 0.9090909090909091,
+          "ndcg@5": 0.9060254355346823,
+          "ndcg@10": 0.8748551918782664,
+          "map": 3.613095238095238
+        },
+        "timing": {
+          "step1_time": 0.1078798770904541,
+          "step2_time": 0.0010669231414794922,
+          "step3_time": 12.538527011871338,
+          "step4_time": 0.0012326240539550781,
+          "total_time": 12.648758888244629
+        },
+        "latency": 12.648758888244629
+      },
+      {
+        "question": "What are the geographies that American Express primarily operates in as of 2022?",
+        "output_tokens": 5114,
+        "metrics": {
+          "precision@5": 0.8,
+          "recall@5": 4.0,
+          "f1@5": 1.3333333333333335,
+          "precision@10": 0.7,
+          "recall@10": 7.0,
+          "f1@10": 1.2727272727272725,
+          "ndcg@5": 0.9828920819566879,
+          "ndcg@10": 0.952194863477961,
+          "map": 6.0
+        },
+        "timing": {
+          "step1_time": 0.10388588905334473,
+          "step2_time": 0.0008411407470703125,
+          "step3_time": 16.543355464935303,
+          "step4_time": 0.0013761520385742188,
+          "total_time": 16.649521112442017
+        },
+        "latency": 16.649521112442017
+      },
+      {
+        "question": "Does AMEX have an improving operating margin profile as of 2022? If operating margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 2816,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 0.6934264036172708,
+          "ndcg@10": 0.6934264036172708,
+          "map": 1.1666666666666665
+        },
+        "timing": {
+          "step1_time": 0.1040184497833252,
+          "step2_time": 0.0012898445129394531,
+          "step3_time": 20.336026906967163,
+          "step4_time": 0.0026853084564208984,
+          "total_time": 20.444076776504517
+        },
+        "latency": 20.444076776504517
+      },
+      {
+        "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 2104,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3333333333333333,
+          "map": 0.14285714285714285
+        },
+        "timing": {
+          "step1_time": 0.11465144157409668,
+          "step2_time": 0.0012879371643066406,
+          "step3_time": 18.767653942108154,
+          "step4_time": 0.0026710033416748047,
+          "total_time": 18.886326551437378
+        },
+        "latency": 18.886326551437378
+      },
+      {
+        "question": "How much has the effective tax rate of American Express changed between FY2021 and FY2022?",
+        "output_tokens": 2375,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.0,
+          "recall@10": 0.0,
+          "f1@10": 0,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0,
+          "map": 0.0
+        },
+        "timing": {
+          "step1_time": 0.10067343711853027,
+          "step2_time": 0.0014963150024414062,
+          "step3_time": 15.912177801132202,
+          "step4_time": 0.0013813972473144531,
+          "total_time": 16.015795946121216
+        },
+        "latency": 16.015795946121216
+      },
+      {
+        "question": "What was the largest liability in American Express's Balance Sheet in 2022?",
+        "output_tokens": 2725,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.0,
+          "recall@10": 0.0,
+          "f1@10": 0,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.0,
+          "map": 0.0
+        },
+        "timing": {
+          "step1_time": 0.10283684730529785,
+          "step2_time": 0.0014352798461914062,
+          "step3_time": 21.793524742126465,
+          "step4_time": 0.0026776790618896484,
+          "total_time": 21.900529623031616
+        },
+        "latency": 21.900529623031616
+      },
+      {
+        "question": "Was American Express able to retain card members during 2022?",
+        "output_tokens": 4672,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 1.0,
+          "recall@10": 10.0,
+          "f1@10": 1.8181818181818181,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 10.0
+        },
+        "timing": {
+          "step1_time": 0.10832428932189941,
+          "step2_time": 0.0013592243194580078,
+          "step3_time": 20.975757122039795,
+          "step4_time": 0.0014185905456542969,
+          "total_time": 21.086911916732788
+        },
+        "latency": 21.086911916732788
+      },
+      {
+        "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+        "output_tokens": 2816,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.8175295903539445,
+          "map": 1.2857142857142856
+        },
+        "timing": {
+          "step1_time": 0.10995006561279297,
+          "step2_time": 0.0009744167327880859,
+          "step3_time": 15.57745909690857,
+          "step4_time": 0.0027256011962890625,
+          "total_time": 15.691165924072266
+        },
+        "latency": 15.691165924072266
+      },
+      {
+        "question": "Basing your judgments off of the cash flow statement and the income statement, what is American Water Works's FY2021 unadjusted operating income + depreciation and amortization from the cash flow statement (unadjusted EBITDA) in USD millions?",
+        "output_tokens": 2442,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.6309297535714575,
+          "ndcg@10": 0.6309297535714575,
+          "map": 0.5
+        },
+        "timing": {
+          "step1_time": 0.10912919044494629,
+          "step2_time": 0.0011470317840576172,
+          "step3_time": 19.38540267944336,
+          "step4_time": 0.0010428428649902344,
+          "total_time": 19.496776342391968
+        },
+        "latency": 19.496776342391968
+      },
+      {
+        "question": "Does American Water Works have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+        "output_tokens": 2870,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.5,
+          "recall@10": 5.0,
+          "f1@10": 0.9090909090909091,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9378773695257355,
+          "map": 4.1269841269841265
+        },
+        "timing": {
+          "step1_time": 0.10439753532409668,
+          "step2_time": 0.0007100105285644531,
+          "step3_time": 10.391197443008423,
+          "step4_time": 0.002957582473754883,
+          "total_time": 10.499318838119507
+        },
+        "latency": 10.499318838119507
+      },
+      {
+        "question": "In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place.",
+        "output_tokens": 2560,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 1.0
+        },
+        "timing": {
+          "step1_time": 0.10813498497009277,
+          "step2_time": 0.0013630390167236328,
+          "step3_time": 19.012394428253174,
+          "step4_time": 0.0014891624450683594,
+          "total_time": 19.123436212539673
+        },
+        "latency": 19.123436212539673
+      },
+      {
+        "question": "What is the year end FY2019 total amount of inventories for Best Buy? Answer in USD millions. Base your judgments on the information provided primarily in the balance sheet.",
+        "output_tokens": 3751,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.4,
+          "recall@10": 4.0,
+          "f1@10": 0.7272727272727273,
+          "ndcg@5": 0.8529278650606567,
+          "ndcg@10": 0.8326783988613894,
+          "map": 2.6
+        },
+        "timing": {
+          "step1_time": 0.1084432601928711,
+          "step2_time": 0.0014247894287109375,
+          "step3_time": 16.251885175704956,
+          "step4_time": 0.0037336349487304688,
+          "total_time": 16.365546464920044
+        },
+        "latency": 16.365546464920044
+      },
+      {
+        "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+        "output_tokens": 2733,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 0.5012658353418871,
+          "ndcg@10": 0.5508095940041026,
+          "map": 1.15
+        },
+        "timing": {
+          "step1_time": 0.10203409194946289,
+          "step2_time": 0.0012178421020507812,
+          "step3_time": 19.235847234725952,
+          "step4_time": 0.001016378402709961,
+          "total_time": 19.340167999267578
+        },
+        "latency": 19.340167999267578
+      },
+      {
+        "question": "What are major acquisitions that Best Buy has done in FY2023, FY2022 and FY2021?",
+        "output_tokens": 4234,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.5,
+          "recall@10": 5.0,
+          "f1@10": 0.9090909090909091,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9456352704673577,
+          "map": 4.222222222222222
+        },
+        "timing": {
+          "step1_time": 0.1108546257019043,
+          "step2_time": 0.0014750957489013672,
+          "step3_time": 19.940165519714355,
+          "step4_time": 0.001470327377319336,
+          "total_time": 20.054020643234253
+        },
+        "latency": 20.054020643234253
+      },
+      {
+        "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Best Buy in FY2023?",
+        "output_tokens": 2933,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.31546487678572877,
+          "map": 0.125
+        },
+        "timing": {
+          "step1_time": 0.11356377601623535,
+          "step2_time": 0.00127410888671875,
+          "step3_time": 22.227653741836548,
+          "step4_time": 0.0026738643646240234,
+          "total_time": 22.34521794319153
+        },
+        "latency": 22.34521794319153
+      },
+      {
+        "question": "Was there any drop in Cash & Cash equivalents between FY 2023 and Q2 of FY2024?",
+        "output_tokens": 2751,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 1.0
+        },
+        "timing": {
+          "step1_time": 0.18343353271484375,
+          "step2_time": 0.001659393310546875,
+          "step3_time": 27.81596064567566,
+          "step4_time": 0.00273895263671875,
+          "total_time": 28.00386095046997
+        },
+        "latency": 28.00386095046997
+      },
+      {
+        "question": "Was there any change in the number of Best Buy stores between Q2 of FY2024 and FY2023?",
+        "output_tokens": 3410,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 0.9197207891481876,
+          "ndcg@10": 0.8395700624665824,
+          "map": 1.9666666666666666
+        },
+        "timing": {
+          "step1_time": 0.11584877967834473,
+          "step2_time": 0.0012347698211669922,
+          "step3_time": 18.32463502883911,
+          "step4_time": 0.0033245086669921875,
+          "total_time": 18.445103645324707
+        },
+        "latency": 18.445103645324707
+      },
+      {
+        "question": "Which Best Buy product category performed the best (by top line) in the domestic (USA) Market during Q2 of FY2024?",
+        "output_tokens": 3082,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 0.6309297535714575,
+          "ndcg@10": 0.5802792108518124,
+          "map": 0.75
+        },
+        "timing": {
+          "step1_time": 0.12513351440429688,
+          "step2_time": 0.001306295394897461,
+          "step3_time": 18.976420164108276,
+          "step4_time": 0.002628803253173828,
+          "total_time": 19.105553150177002
+        },
+        "latency": 19.105553150177002
+      },
+      {
+        "question": "What is the FY2019 - FY2020 total revenue growth rate for Block (formerly known as Square)? Answer in units of percents and round to one decimal place. Approach the question asked by assuming the standpoint of an investment banking analyst who only has access to the statement of income.",
+        "output_tokens": 3339,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.31546487678572877,
+          "map": 0.125
+        },
+        "timing": {
+          "step1_time": 0.1232903003692627,
+          "step2_time": 0.001524209976196289,
+          "step3_time": 21.749063968658447,
+          "step4_time": 0.0025250911712646484,
+          "total_time": 21.876461505889893
+        },
+        "latency": 21.876461505889893
+      },
+      {
+        "question": "Using the cash flow statement, answer the following question to the best of your abilities: how much did Block (formerly known as Square) generate in cash flow from operating activities in FY2020? Answer in USD millions.",
+        "output_tokens": 6321,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.8175295903539445,
+          "map": 1.2857142857142856
+        },
+        "timing": {
+          "step1_time": 0.12324285507202148,
+          "step2_time": 0.0014662742614746094,
+          "step3_time": 20.690523386001587,
+          "step4_time": 0.002460479736328125,
+          "total_time": 20.817748546600342
+        },
+        "latency": 20.817748546600342
+      },
+      {
+        "question": "Are there any product categories / service categories that represent more than 20% of Boeing's revenue for FY2022?",
+        "output_tokens": 2015,
+        "metrics": {
+          "precision@5": 0.8,
+          "recall@5": 4.0,
+          "f1@5": 1.3333333333333335,
+          "precision@10": 0.8,
+          "recall@10": 8.0,
+          "f1@10": 1.4545454545454546,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9670943502702474,
+          "map": 7.161111111111111
+        },
+        "timing": {
+          "step1_time": 0.1296985149383545,
+          "step2_time": 0.0014443397521972656,
+          "step3_time": 17.78581929206848,
+          "step4_time": 0.0029952526092529297,
+          "total_time": 17.92002010345459
+        },
+        "latency": 17.92002010345459
+      },
+      {
+        "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+        "output_tokens": 2033,
+        "metrics": {
+          "precision@5": 0.8,
+          "recall@5": 4.0,
+          "f1@5": 1.3333333333333335,
+          "precision@10": 0.9,
+          "recall@10": 9.0,
+          "f1@10": 1.6363636363636362,
+          "ndcg@5": 0.9828920819566879,
+          "ndcg@10": 0.9667147927059906,
+          "map": 8.15436507936508
+        },
+        "timing": {
+          "step1_time": 0.11865806579589844,
+          "step2_time": 0.0014371871948242188,
+          "step3_time": 20.51275897026062,
+          "step4_time": 0.002512693405151367,
+          "total_time": 20.6354238986969
+        },
+        "latency": 20.6354238986969
+      },
+      {
+        "question": "Does Boeing have an improving gross margin profile as of FY2022? If gross margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 2675,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 0.8,
+          "recall@10": 8.0,
+          "f1@10": 1.4545454545454546,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 8.0
+        },
+        "timing": {
+          "step1_time": 0.11611747741699219,
+          "step2_time": 0.0013666152954101562,
+          "step3_time": 19.489830255508423,
+          "step4_time": 0.001398324966430664,
+          "total_time": 19.60876774787903
+        },
+        "latency": 19.60876774787903
+      },
+      {
+        "question": "Who are the primary customers of Boeing as of FY2022?",
+        "output_tokens": 2803,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 1.0,
+          "recall@10": 10.0,
+          "f1@10": 1.8181818181818181,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 10.0
+        },
+        "timing": {
+          "step1_time": 0.10681033134460449,
+          "step2_time": 0.0016064643859863281,
+          "step3_time": 19.683884143829346,
+          "step4_time": 0.0010194778442382812,
+          "total_time": 19.79338026046753
+        },
+        "latency": 19.79338026046753
+      },
+      {
+        "question": "Is Boeing's business subject to cyclicality?",
+        "output_tokens": 2925,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 0.8,
+          "recall@10": 8.0,
+          "f1@10": 1.4545454545454546,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9888026041880242,
+          "map": 7.675
+        },
+        "timing": {
+          "step1_time": 0.1156926155090332,
+          "step2_time": 0.0014240741729736328,
+          "step3_time": 19.87259292602539,
+          "step4_time": 0.002738475799560547,
+          "total_time": 19.992505073547363
+        },
+        "latency": 19.992505073547363
+      },
+      {
+        "question": "What production rate changes is Boeing forecasting for FY2023?",
+        "output_tokens": 1408,
+        "metrics": {
+          "precision@5": 0.8,
+          "recall@5": 4.0,
+          "f1@5": 1.3333333333333335,
+          "precision@10": 0.9,
+          "recall@10": 9.0,
+          "f1@10": 1.6363636363636362,
+          "ndcg@5": 0.7606395682357036,
+          "ndcg@10": 0.8328978515038054,
+          "map": 7.071031746031746
+        },
+        "timing": {
+          "step1_time": 0.12166333198547363,
+          "step2_time": 0.0013422966003417969,
+          "step3_time": 18.50770854949951,
+          "step4_time": 0.002840280532836914,
+          "total_time": 18.63361620903015
+        },
+        "latency": 18.63361620903015
+      },
+      {
+        "question": "How does Boeing's effective tax rate in FY2022 compare to FY2021?",
+        "output_tokens": 2176,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 0.43067655807339306,
+          "ndcg@10": 0.5105347743265789,
+          "map": 0.9166666666666666
+        },
+        "timing": {
+          "step1_time": 0.10810732841491699,
+          "step2_time": 0.0013499259948730469,
+          "step3_time": 17.25936794281006,
+          "step4_time": 0.002666473388671875,
+          "total_time": 17.37154722213745
+        },
+        "latency": 17.37154722213745
+      },
+      {
+        "question": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?",
+        "output_tokens": 2503,
+        "metrics": {
+          "precision@5": 0.8,
+          "recall@5": 4.0,
+          "f1@5": 1.3333333333333335,
+          "precision@10": 0.5,
+          "recall@10": 5.0,
+          "f1@10": 0.9090909090909091,
+          "ndcg@5": 0.9828920819566879,
+          "ndcg@10": 0.9519709359886506,
+          "map": 4.3
+        },
+        "timing": {
+          "step1_time": 0.10246944427490234,
+          "step2_time": 0.0012664794921875,
+          "step3_time": 16.951210498809814,
+          "step4_time": 0.0013659000396728516,
+          "total_time": 17.056363344192505
+        },
+        "latency": 17.056363344192505
+      },
+      {
+        "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+        "output_tokens": 2907,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 1.0,
+          "recall@10": 10.0,
+          "f1@10": 1.8181818181818181,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 10.0
+        },
+        "timing": {
+          "step1_time": 0.12325215339660645,
+          "step2_time": 0.0014460086822509766,
+          "step3_time": 20.37797737121582,
+          "step4_time": 0.0025529861450195312,
+          "total_time": 20.50529170036316
+        },
+        "latency": 20.50529170036316
+      },
+      {
+        "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+        "output_tokens": 2048,
+        "metrics": {
+          "precision@5": 0.8,
+          "recall@5": 4.0,
+          "f1@5": 1.3333333333333335,
+          "precision@10": 0.8,
+          "recall@10": 8.0,
+          "f1@10": 1.4545454545454546,
+          "ndcg@5": 0.9047172294870751,
+          "ndcg@10": 0.9098765634739489,
+          "map": 6.484920634920635
+        },
+        "timing": {
+          "step1_time": 0.12001824378967285,
+          "step2_time": 0.0013594627380371094,
+          "step3_time": 22.030205726623535,
+          "step4_time": 0.0024826526641845703,
+          "total_time": 22.15412211418152
+        },
+        "latency": 22.15412211418152
+      },
+      {
+        "question": "Has CVS Health reported any materially important ongoing legal battles from 2022, 2021 and 2020?",
+        "output_tokens": 4736,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 1.0,
+          "recall@10": 10.0,
+          "f1@10": 1.8181818181818181,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 10.0
+        },
+        "timing": {
+          "step1_time": 0.11804795265197754,
+          "step2_time": 0.0014424324035644531,
+          "step3_time": 21.147122859954834,
+          "step4_time": 0.0013289451599121094,
+          "total_time": 21.26806926727295
+        },
+        "latency": 21.26806926727295
+      },
+      {
+        "question": "Has CVS Health paid dividends to common shareholders in Q2 of FY2022?",
+        "output_tokens": 1792,
+        "metrics": {
+          "precision@5": 1.0,
+          "recall@5": 5.0,
+          "f1@5": 1.6666666666666667,
+          "precision@10": 1.0,
+          "recall@10": 10.0,
+          "f1@10": 1.8181818181818181,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0,
+          "map": 10.0
+        },
+        "timing": {
+          "step1_time": 0.10175895690917969,
+          "step2_time": 0.001100301742553711,
+          "step3_time": 18.38981533050537,
+          "step4_time": 0.001734018325805664,
+          "total_time": 18.49446964263916
+        },
+        "latency": 18.49446964263916
+      },
+      {
+        "question": "By drawing conclusions from the information stated only in the statement of financial position, what is General Mills's FY2020 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+        "output_tokens": 3677,
+        "metrics": {
+          "precision@5": 0.6,
+          "recall@5": 3.0,
+          "f1@5": 0.9999999999999999,
+          "precision@10": 0.4,
+          "recall@10": 4.0,
+          "f1@10": 0.7272727272727273,
+          "ndcg@5": 0.7122630665145961,
+          "ndcg@10": 0.7315682114753617,
+          "map": 2.433333333333333
+        },
+        "timing": {
+          "step1_time": 0.12900662422180176,
+          "step2_time": 0.001539468765258789,
+          "step3_time": 20.279572248458862,
+          "step4_time": 0.001861572265625,
+          "total_time": 20.41204047203064
+        },
+        "latency": 20.41204047203064
+      },
+      {
+        "question": "According to the information provided in the statement of cash flows, what is the FY2020 free cash flow (FCF) for General Mills? FCF here is defined as: (cash from operations - capex). Answer in USD millions.",
+        "output_tokens": 2632,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9134015924715543,
+          "map": 2.375
+        },
+        "timing": {
+          "step1_time": 0.11321520805358887,
+          "step2_time": 0.0012700557708740234,
+          "step3_time": 19.957865238189697,
+          "step4_time": 0.0013077259063720703,
+          "total_time": 20.07371425628662
+        },
+        "latency": 20.07371425628662
+      },
+      {
+        "question": "Are JnJ's FY2022 financials that of a high growth company?",
+        "output_tokens": 3293,
+        "metrics": {
+          "precision@5": 0.4,
+          "recall@5": 2.0,
+          "f1@5": 0.6666666666666667,
+          "precision@10": 0.2,
+          "recall@10": 2.0,
+          "f1@10": 0.36363636363636365,
+          "ndcg@5": 0.5012658353418871,
+          "ndcg@10": 0.5012658353418871,
+          "map": 0.65
+        },
+        "timing": {
+          "step1_time": 0.12383079528808594,
+          "step2_time": 0.0014867782592773438,
+          "step3_time": 22.578970670700073,
+          "step4_time": 0.0026924610137939453,
+          "total_time": 22.707041263580322
+        },
+        "latency": 22.707041263580322
+      },
+      {
+        "question": "What drove gross margin change as of FY2022 for JnJ? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 2176,
+        "metrics": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "f1@5": 0,
+          "precision@10": 0.1,
+          "recall@10": 1.0,
+          "f1@10": 0.18181818181818182,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.3562071871080222,
+          "map": 0.16666666666666666
+        },
+        "timing": {
+          "step1_time": 0.15702438354492188,
+          "step2_time": 0.0014011859893798828,
+          "step3_time": 29.59049105644226,
+          "step4_time": 0.0026514530181884766,
+          "total_time": 29.751628160476685
+        },
+        "latency": 29.751628160476685
+      },
+      {
+        "question": "Roughly how many times has JnJ sold its inventory in FY2022? Calculate inventory turnover ratio for FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+        "output_tokens": 3765,
+        "metrics": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "f1@5": 0.33333333333333337,
+          "precision@10": 0.3,
+          "recall@10": 3.0,
+          "f1@10": 0.5454545454545454,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.7928654229965442,
+          "map": 1.7619047619047619
+        },
+        "timing": {
+          "step1_time": 0.17409729957580566,
+          "step2_time": 0.001539468765258789,
+          "step3_time": 33.11142158508301,
+          "step4_time": 0.0027618408203125,
+          "total_time": 33.28988337516785
+        },
+        "latency": 33.28988337516785
+      }
+    ]
+  },
+  "method_b": {
+    "accuracy": 0.8133333333333334,
+    "avg_latency_s": 47.540597407023114,
+    "token_stats": {
+      "total_input_tokens": 3110575,
+      "total_chunk_tokens": 12442291,
+      "avg_output_tokens_per_query": 1741.8266666666666,
+      "compression_ratio": 7143.242917397062,
+      "by_stage": {
+        "retrieval": {
+          "output_tokens": 32040
+        },
+        "deduplication": {
+          "output_tokens": 19224
+        },
+        "compression_stage": {
+          "output_tokens": 5340
+        },
+        "reranking": {
+          "output_tokens": 5340
+        }
+      }
+    },
+    "timing_stats": {
+      "retrieval_time": 12.445344686508179,
+      "rerank_time": 3239.394996881485,
+      "compress_time": 313.6964771747589,
+      "pack_time": 0.0008857250213623047
+    },
+    "detailed_results": [
+      {
+        "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+        "output_tokens": 1844,
+        "hit": 1,
+        "latency": 50.50068545341492
+      },
+      {
+        "question": "Assume that you are a public equities analyst. Answer the following question by primarily using information that is shown in the balance sheet: what is the year end FY2018 net PPNE for 3M? Answer in USD billions.",
+        "output_tokens": 877,
+        "hit": 1,
+        "latency": 55.367823362350464
+      },
+      {
+        "question": "Is 3M a capital-intensive business based on FY2022 data?",
+        "output_tokens": 1578,
+        "hit": 1,
+        "latency": 53.922497510910034
+      },
+      {
+        "question": "What drove operating margin change as of FY2022 for 3M? If operating margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 1599,
+        "hit": 1,
+        "latency": 56.705254316329956
+      },
+      {
+        "question": "If we exclude the impact of M&A, which segment has dragged down 3M's overall growth in 2022?",
+        "output_tokens": 1467,
+        "hit": 1,
+        "latency": 55.34434485435486
+      },
+      {
+        "question": "Does 3M have a reasonably healthy liquidity profile based on its quick ratio for Q2 of FY2023? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+        "output_tokens": 607,
+        "hit": 1,
+        "latency": 47.70458769798279
+      },
+      {
+        "question": "Which debt securities are registered to trade on a national securities exchange under 3M's name as of Q2 of 2023?",
+        "output_tokens": 2492,
+        "hit": 1,
+        "latency": 41.64769697189331
+      },
+      {
+        "question": "Does 3M maintain a stable trend of dividend distribution?",
+        "output_tokens": 917,
+        "hit": 1,
+        "latency": 33.60709476470947
+      },
+      {
+        "question": "What is the FY2019 fixed asset turnover ratio for Activision Blizzard? Fixed asset turnover ratio is defined as: FY2019 revenue / (average PP&E between FY2018 and FY2019). Round your answer to two decimal places. Base your judgments on the information provided primarily in the statement of income and the statement of financial position.",
+        "output_tokens": 2660,
+        "hit": 1,
+        "latency": 35.114006757736206
+      },
+      {
+        "question": "What is the FY2017 - FY2019 3 year average of capex as a % of revenue for Activision Blizzard? Answer in units of percents and round to one decimal place. Calculate (or extract) the answer from the statement of income and the cash flow statement.",
+        "output_tokens": 1674,
+        "hit": 1,
+        "latency": 35.03862500190735
+      },
+      {
+        "question": "You are an investment banker and your only resource(s) to answer the following question is (are): the statement of financial position and the cash flow statement. Here's the question: what is the FY2015 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places.",
+        "output_tokens": 2705,
+        "hit": 0,
+        "latency": 55.36330437660217
+      },
+      {
+        "question": "What is Adobe's year-over-year change in unadjusted operating income from FY2015 to FY2016 (in units of percents and round to one decimal place)? Give a solution to the question by using the income statement.",
+        "output_tokens": 1322,
+        "hit": 1,
+        "latency": 53.52993845939636
+      },
+      {
+        "question": "What is the FY2017 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places. Please utilize information provided primarily within the balance sheet and the cash flow statement.",
+        "output_tokens": 1161,
+        "hit": 0,
+        "latency": 36.32215213775635
+      },
+      {
+        "question": "Does Adobe have an improving operating margin profile as of FY2022? If operating margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 322,
+        "hit": 1,
+        "latency": 34.15224289894104
+      },
+      {
+        "question": "Does Adobe have an improving Free cashflow conversion as of FY2022?",
+        "output_tokens": 509,
+        "hit": 0,
+        "latency": 38.55022072792053
+      },
+      {
+        "question": "What is the quantity of restructuring costs directly outlined in AES Corporation's income statements for FY2022? If restructuring costs are not explicitly outlined then state 0.",
+        "output_tokens": 3285,
+        "hit": 1,
+        "latency": 35.55709719657898
+      },
+      {
+        "question": "Roughly how many times has AES Corporation sold its inventory in FY2022? Calculate inventory turnover ratio for the FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+        "output_tokens": 2052,
+        "hit": 1,
+        "latency": 49.45915937423706
+      },
+      {
+        "question": "Based on the information provided primarily in the statement of financial position and the statement of income, what is AES's FY2022 return on assets (ROA)? ROA is defined as: FY2022 net income / (average total assets between FY2021 and FY2022). Round your answer to two decimal places.",
+        "output_tokens": 335,
+        "hit": 1,
+        "latency": 56.29999876022339
+      },
+      {
+        "question": "What is Amazon's FY2017 days payable outstanding (DPO)? DPO is defined as: 365 * (average accounts payable between FY2016 and FY2017) / (FY2017 COGS + change in inventory between FY2016 and FY2017). Round your answer to two decimal places. Address the question by using the line items and information shown within the balance sheet and the P&L statement.",
+        "output_tokens": 278,
+        "hit": 1,
+        "latency": 59.82202982902527
+      },
+      {
+        "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+        "output_tokens": 2360,
+        "hit": 1,
+        "latency": 56.88086748123169
+      },
+      {
+        "question": "By drawing conclusions from the information stated only in the income statement, what is Amazon's FY2019 net income attributable to shareholders (in USD millions)?",
+        "output_tokens": 2500,
+        "hit": 1,
+        "latency": 55.56548595428467
+      },
+      {
+        "question": "What is Amcor's year end FY2020 net AR (in USD millions)? Address the question by adopting the perspective of a financial analyst who can only use the details shown within the balance sheet.",
+        "output_tokens": 3929,
+        "hit": 1,
+        "latency": 49.250903606414795
+      },
+      {
+        "question": "What was the key agenda of the AMCOR's 8k filing dated 1st July 2022?",
+        "output_tokens": 3977,
+        "hit": 1,
+        "latency": 48.41540288925171
+      },
+      {
+        "question": "Has AMCOR's quick ratio improved or declined between FY2023 and FY2022? If the quick ratio is not something that a financial analyst would ask about a company like this, then state that and explain why.",
+        "output_tokens": 644,
+        "hit": 0,
+        "latency": 53.80744194984436
+      },
+      {
+        "question": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?",
+        "output_tokens": 2504,
+        "hit": 1,
+        "latency": 54.58560609817505
+      },
+      {
+        "question": "What industry does AMCOR primarily operate in?",
+        "output_tokens": 1747,
+        "hit": 1,
+        "latency": 51.3100860118866
+      },
+      {
+        "question": "Does AMCOR have an improving gross margin profile as of FY2023? If gross margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 2233,
+        "hit": 1,
+        "latency": 41.64961862564087
+      },
+      {
+        "question": "What is the nature & purpose of AMCOR's restructuring liability as oF Q2 of FY2023 close?",
+        "output_tokens": 2242,
+        "hit": 1,
+        "latency": 52.34096670150757
+      },
+      {
+        "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+        "output_tokens": 3919,
+        "hit": 1,
+        "latency": 54.11474871635437
+      },
+      {
+        "question": "How much was the Real change in Sales for AMCOR in FY 2023 vs FY 2022, if we exclude the impact of FX movement, passthrough costs and one-off items?",
+        "output_tokens": 2503,
+        "hit": 1,
+        "latency": 39.92743110656738
+      },
+      {
+        "question": "Answer the following question as if you are an equity research analyst and have lost internet connection so you do not have access to financial metric providers. According to the details clearly outlined within the P&L statement and the statement of cash flows, what is the FY2015 depreciation and amortization (D&A from cash flow statement) % margin for AMD?",
+        "output_tokens": 3277,
+        "hit": 1,
+        "latency": 37.18276047706604
+      },
+      {
+        "question": "Does AMD have a reasonably healthy liquidity profile based on its quick ratio for FY22? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+        "output_tokens": 128,
+        "hit": 0,
+        "latency": 49.924724817276
+      },
+      {
+        "question": "What are the major products and services that AMD sells as of FY22?",
+        "output_tokens": 2432,
+        "hit": 1,
+        "latency": 51.73443150520325
+      },
+      {
+        "question": "What drove revenue change as of the FY22 for AMD?",
+        "output_tokens": 2533,
+        "hit": 1,
+        "latency": 51.13159680366516
+      },
+      {
+        "question": "What drove operating margin change as of the FY22 for AMD? If operating margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 3149,
+        "hit": 0,
+        "latency": 50.049400329589844
+      },
+      {
+        "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+        "output_tokens": 3349,
+        "hit": 0,
+        "latency": 52.682169914245605
+      },
+      {
+        "question": "From FY21 to FY22, excluding Embedded, in which AMD reporting segment did sales proportionally increase the most?",
+        "output_tokens": 1794,
+        "hit": 0,
+        "latency": 53.164167404174805
+      },
+      {
+        "question": "Did AMD report customer concentration in FY22?",
+        "output_tokens": 2434,
+        "hit": 1,
+        "latency": 52.82725429534912
+      },
+      {
+        "question": "Which debt securities are registered to trade on a national securities exchange under American Express' name as of 2022?",
+        "output_tokens": 4047,
+        "hit": 1,
+        "latency": 56.21593737602234
+      },
+      {
+        "question": "What are the geographies that American Express primarily operates in as of 2022?",
+        "output_tokens": 1548,
+        "hit": 1,
+        "latency": 51.777608156204224
+      },
+      {
+        "question": "Does AMEX have an improving operating margin profile as of 2022? If operating margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 568,
+        "hit": 1,
+        "latency": 50.84698677062988
+      },
+      {
+        "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 1057,
+        "hit": 0,
+        "latency": 49.16037726402283
+      },
+      {
+        "question": "How much has the effective tax rate of American Express changed between FY2021 and FY2022?",
+        "output_tokens": 2448,
+        "hit": 0,
+        "latency": 50.838616371154785
+      },
+      {
+        "question": "What was the largest liability in American Express's Balance Sheet in 2022?",
+        "output_tokens": 3130,
+        "hit": 1,
+        "latency": 50.35050296783447
+      },
+      {
+        "question": "Was American Express able to retain card members during 2022?",
+        "output_tokens": 1183,
+        "hit": 1,
+        "latency": 52.06282067298889
+      },
+      {
+        "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+        "output_tokens": 101,
+        "hit": 0,
+        "latency": 53.8377046585083
+      },
+      {
+        "question": "Basing your judgments off of the cash flow statement and the income statement, what is American Water Works's FY2021 unadjusted operating income + depreciation and amortization from the cash flow statement (unadjusted EBITDA) in USD millions?",
+        "output_tokens": 2746,
+        "hit": 1,
+        "latency": 53.4673798084259
+      },
+      {
+        "question": "Does American Water Works have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+        "output_tokens": 1988,
+        "hit": 1,
+        "latency": 51.64321708679199
+      },
+      {
+        "question": "In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place.",
+        "output_tokens": 1817,
+        "hit": 1,
+        "latency": 57.37828016281128
+      },
+      {
+        "question": "What is the year end FY2019 total amount of inventories for Best Buy? Answer in USD millions. Base your judgments on the information provided primarily in the balance sheet.",
+        "output_tokens": 1066,
+        "hit": 1,
+        "latency": 52.68391180038452
+      },
+      {
+        "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+        "output_tokens": 1080,
+        "hit": 1,
+        "latency": 55.076926469802856
+      },
+      {
+        "question": "What are major acquisitions that Best Buy has done in FY2023, FY2022 and FY2021?",
+        "output_tokens": 810,
+        "hit": 1,
+        "latency": 53.27741241455078
+      },
+      {
+        "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Best Buy in FY2023?",
+        "output_tokens": 3366,
+        "hit": 1,
+        "latency": 54.77549600601196
+      },
+      {
+        "question": "Was there any drop in Cash & Cash equivalents between FY 2023 and Q2 of FY2024?",
+        "output_tokens": 2368,
+        "hit": 1,
+        "latency": 49.216654777526855
+      },
+      {
+        "question": "Was there any change in the number of Best Buy stores between Q2 of FY2024 and FY2023?",
+        "output_tokens": 1377,
+        "hit": 1,
+        "latency": 35.883305311203
+      },
+      {
+        "question": "Which Best Buy product category performed the best (by top line) in the domestic (USA) Market during Q2 of FY2024?",
+        "output_tokens": 1062,
+        "hit": 1,
+        "latency": 52.97668242454529
+      },
+      {
+        "question": "What is the FY2019 - FY2020 total revenue growth rate for Block (formerly known as Square)? Answer in units of percents and round to one decimal place. Approach the question asked by assuming the standpoint of an investment banking analyst who only has access to the statement of income.",
+        "output_tokens": 596,
+        "hit": 1,
+        "latency": 54.62308311462402
+      },
+      {
+        "question": "Using the cash flow statement, answer the following question to the best of your abilities: how much did Block (formerly known as Square) generate in cash flow from operating activities in FY2020? Answer in USD millions.",
+        "output_tokens": 584,
+        "hit": 0,
+        "latency": 56.09468388557434
+      },
+      {
+        "question": "Are there any product categories / service categories that represent more than 20% of Boeing's revenue for FY2022?",
+        "output_tokens": 3618,
+        "hit": 1,
+        "latency": 54.17309904098511
+      },
+      {
+        "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+        "output_tokens": 171,
+        "hit": 1,
+        "latency": 48.08817958831787
+      },
+      {
+        "question": "Does Boeing have an improving gross margin profile as of FY2022? If gross margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 917,
+        "hit": 1,
+        "latency": 56.72728109359741
+      },
+      {
+        "question": "Who are the primary customers of Boeing as of FY2022?",
+        "output_tokens": 812,
+        "hit": 1,
+        "latency": 50.64452576637268
+      },
+      {
+        "question": "Is Boeing's business subject to cyclicality?",
+        "output_tokens": 960,
+        "hit": 1,
+        "latency": 50.41204881668091
+      },
+      {
+        "question": "What production rate changes is Boeing forecasting for FY2023?",
+        "output_tokens": 1667,
+        "hit": 1,
+        "latency": 47.24408316612244
+      },
+      {
+        "question": "How does Boeing's effective tax rate in FY2022 compare to FY2021?",
+        "output_tokens": 3410,
+        "hit": 1,
+        "latency": 38.07042384147644
+      },
+      {
+        "question": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?",
+        "output_tokens": 2387,
+        "hit": 1,
+        "latency": 32.76692771911621
+      },
+      {
+        "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+        "output_tokens": 1082,
+        "hit": 1,
+        "latency": 34.36292743682861
+      },
+      {
+        "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+        "output_tokens": 1144,
+        "hit": 1,
+        "latency": 32.09942960739136
+      },
+      {
+        "question": "Has CVS Health reported any materially important ongoing legal battles from 2022, 2021 and 2020?",
+        "output_tokens": 1261,
+        "hit": 1,
+        "latency": 34.3590931892395
+      },
+      {
+        "question": "Has CVS Health paid dividends to common shareholders in Q2 of FY2022?",
+        "output_tokens": 2543,
+        "hit": 1,
+        "latency": 32.588653802871704
+      },
+      {
+        "question": "By drawing conclusions from the information stated only in the statement of financial position, what is General Mills's FY2020 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+        "output_tokens": 159,
+        "hit": 1,
+        "latency": 34.626471281051636
+      },
+      {
+        "question": "According to the information provided in the statement of cash flows, what is the FY2020 free cash flow (FCF) for General Mills? FCF here is defined as: (cash from operations - capex). Answer in USD millions.",
+        "output_tokens": 141,
+        "hit": 0,
+        "latency": 34.44202542304993
+      },
+      {
+        "question": "Are JnJ's FY2022 financials that of a high growth company?",
+        "output_tokens": 1075,
+        "hit": 1,
+        "latency": 33.92238783836365
+      },
+      {
+        "question": "What drove gross margin change as of FY2022 for JnJ? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 938,
+        "hit": 0,
+        "latency": 33.57572793960571
+      },
+      {
+        "question": "Roughly how many times has JnJ sold its inventory in FY2022? Calculate inventory turnover ratio for FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+        "output_tokens": 72,
+        "hit": 1,
+        "latency": 34.70010733604431
+      }
+    ]
+  },
+  "method_c": {
+    "accuracy": 0.9066666666666666,
+    "avg_latency_s": 18.56623100598653,
+    "token_stats": {
+      "total_input_tokens": 3110575,
+      "total_chunk_tokens": 12442291,
+      "avg_output_tokens_per_query": 3687.4666666666667,
+      "compression_ratio": 3374.2111115128723,
+      "by_stage": {
+        "retrieval": {
+          "output_tokens": 32040
+        },
+        "deduplication": {
+          "output_tokens": 19224
+        },
+        "compression_stage": {
+          "output_tokens": 5340
+        },
+        "reranking": {
+          "output_tokens": 5340
+        }
+      }
+    },
+    "timing_stats": {
+      "retrieval_time": 9.260678768157959,
+      "dedup_time": 0.08548879623413086,
+      "cluster_time": 6.859129428863525,
+      "select_time": 0.03934001922607422
+    },
+    "diversity_stats": [
+      {
+        "mean_sim": 0.5287355780601501,
+        "max_sim": 0.689173698425293,
+        "min_sim": 0.33836543560028076,
+        "std_sim": 0.08821600675582886
+      },
+      {
+        "mean_sim": 0.47245314717292786,
+        "max_sim": 0.6515493392944336,
+        "min_sim": 0.29913026094436646,
+        "std_sim": 0.07271760702133179
+      },
+      {
+        "mean_sim": 0.5138641595840454,
+        "max_sim": 0.7586501836776733,
+        "min_sim": 0.2755809426307678,
+        "std_sim": 0.09664148837327957
+      },
+      {
+        "mean_sim": 0.46316635608673096,
+        "max_sim": 0.7075707912445068,
+        "min_sim": 0.24687132239341736,
+        "std_sim": 0.10375130921602249
+      },
+      {
+        "mean_sim": 0.45461124181747437,
+        "max_sim": 0.6879266500473022,
+        "min_sim": 0.23879680037498474,
+        "std_sim": 0.0977790504693985
+      },
+      {
+        "mean_sim": 0.4221666157245636,
+        "max_sim": 0.7225055694580078,
+        "min_sim": 0.14748930931091309,
+        "std_sim": 0.11862116307020187
+      },
+      {
+        "mean_sim": 0.5043461322784424,
+        "max_sim": 0.8072012066841125,
+        "min_sim": 0.3051470220088959,
+        "std_sim": 0.11554764211177826
+      },
+      {
+        "mean_sim": 0.45463454723358154,
+        "max_sim": 0.7248877286911011,
+        "min_sim": 0.20827579498291016,
+        "std_sim": 0.12474092841148376
+      },
+      {
+        "mean_sim": 0.5400508046150208,
+        "max_sim": 0.7847270369529724,
+        "min_sim": 0.3851209282875061,
+        "std_sim": 0.10768220573663712
+      },
+      {
+        "mean_sim": 0.46093887090682983,
+        "max_sim": 0.6783415079116821,
+        "min_sim": 0.22064727544784546,
+        "std_sim": 0.11871819943189621
+      },
+      {
+        "mean_sim": 0.572439432144165,
+        "max_sim": 0.7064427137374878,
+        "min_sim": 0.44747206568717957,
+        "std_sim": 0.05704924091696739
+      },
+      {
+        "mean_sim": 0.5116026997566223,
+        "max_sim": 0.6893552541732788,
+        "min_sim": 0.3447991609573364,
+        "std_sim": 0.08783383667469025
+      },
+      {
+        "mean_sim": 0.5399488806724548,
+        "max_sim": 0.7913004755973816,
+        "min_sim": 0.39726942777633667,
+        "std_sim": 0.08516710251569748
+      },
+      {
+        "mean_sim": 0.43423813581466675,
+        "max_sim": 0.6604289412498474,
+        "min_sim": 0.15336374938488007,
+        "std_sim": 0.13678479194641113
+      },
+      {
+        "mean_sim": 0.45288243889808655,
+        "max_sim": 0.7173125147819519,
+        "min_sim": 0.09266269207000732,
+        "std_sim": 0.14452461898326874
+      },
+      {
+        "mean_sim": 0.6056802272796631,
+        "max_sim": 0.8005353212356567,
+        "min_sim": 0.34011605381965637,
+        "std_sim": 0.0849623903632164
+      },
+      {
+        "mean_sim": 0.4802471697330475,
+        "max_sim": 0.7042516469955444,
+        "min_sim": 0.25011879205703735,
+        "std_sim": 0.10344556719064713
+      },
+      {
+        "mean_sim": 0.4551760256290436,
+        "max_sim": 0.6095466613769531,
+        "min_sim": 0.30459463596343994,
+        "std_sim": 0.07213376462459564
+      },
+      {
+        "mean_sim": 0.46105799078941345,
+        "max_sim": 0.6885251998901367,
+        "min_sim": 0.22542212903499603,
+        "std_sim": 0.0985625833272934
+      },
+      {
+        "mean_sim": 0.5334159731864929,
+        "max_sim": 0.781277596950531,
+        "min_sim": 0.3723944425582886,
+        "std_sim": 0.08715442568063736
+      },
+      {
+        "mean_sim": 0.5383207201957703,
+        "max_sim": 0.7224036455154419,
+        "min_sim": 0.3296188712120056,
+        "std_sim": 0.09244422614574432
+      },
+      {
+        "mean_sim": 0.5380346775054932,
+        "max_sim": 0.781128466129303,
+        "min_sim": 0.3193560838699341,
+        "std_sim": 0.11654941737651825
+      },
+      {
+        "mean_sim": 0.4773017466068268,
+        "max_sim": 0.646510660648346,
+        "min_sim": 0.21594369411468506,
+        "std_sim": 0.10717441141605377
+      },
+      {
+        "mean_sim": 0.47237664461135864,
+        "max_sim": 0.6997196078300476,
+        "min_sim": 0.28928181529045105,
+        "std_sim": 0.09548400342464447
+      },
+      {
+        "mean_sim": 0.3978285789489746,
+        "max_sim": 0.609351396560669,
+        "min_sim": 0.25501498579978943,
+        "std_sim": 0.08204793184995651
+      },
+      {
+        "mean_sim": 0.43794941902160645,
+        "max_sim": 0.6805601119995117,
+        "min_sim": 0.1407918930053711,
+        "std_sim": 0.12942533195018768
+      },
+      {
+        "mean_sim": 0.5132632851600647,
+        "max_sim": 0.7694101929664612,
+        "min_sim": 0.2955380082130432,
+        "std_sim": 0.12082358449697495
+      },
+      {
+        "mean_sim": 0.43828827142715454,
+        "max_sim": 0.7808451652526855,
+        "min_sim": 0.2823951840400696,
+        "std_sim": 0.10310477763414383
+      },
+      {
+        "mean_sim": 0.5340667963027954,
+        "max_sim": 0.7654621601104736,
+        "min_sim": 0.2965223491191864,
+        "std_sim": 0.10694289207458496
+      },
+      {
+        "mean_sim": 0.5322641730308533,
+        "max_sim": 0.7692816257476807,
+        "min_sim": 0.2746795415878296,
+        "std_sim": 0.10979855805635452
+      },
+      {
+        "mean_sim": 0.5148969292640686,
+        "max_sim": 0.702602744102478,
+        "min_sim": 0.2827940285205841,
+        "std_sim": 0.08793503046035767
+      },
+      {
+        "mean_sim": 0.3989241421222687,
+        "max_sim": 0.7391436100006104,
+        "min_sim": 0.05741339176893234,
+        "std_sim": 0.1814069300889969
+      },
+      {
+        "mean_sim": 0.4405834972858429,
+        "max_sim": 0.6165103912353516,
+        "min_sim": 0.1486767828464508,
+        "std_sim": 0.1183537095785141
+      },
+      {
+        "mean_sim": 0.46713507175445557,
+        "max_sim": 0.612562894821167,
+        "min_sim": 0.17918643355369568,
+        "std_sim": 0.09648764133453369
+      },
+      {
+        "mean_sim": 0.4795489013195038,
+        "max_sim": 0.7314655780792236,
+        "min_sim": 0.14673304557800293,
+        "std_sim": 0.13151918351650238
+      },
+      {
+        "mean_sim": 0.5372268557548523,
+        "max_sim": 0.7630398273468018,
+        "min_sim": 0.20342683792114258,
+        "std_sim": 0.17024771869182587
+      },
+      {
+        "mean_sim": 0.46416354179382324,
+        "max_sim": 0.7133499383926392,
+        "min_sim": 0.2205321341753006,
+        "std_sim": 0.12794137001037598
+      },
+      {
+        "mean_sim": 0.48440131545066833,
+        "max_sim": 0.8442494869232178,
+        "min_sim": 0.281279057264328,
+        "std_sim": 0.09185994416475296
+      },
+      {
+        "mean_sim": 0.4722960889339447,
+        "max_sim": 0.7501523494720459,
+        "min_sim": 0.2698047459125519,
+        "std_sim": 0.09627600014209747
+      },
+      {
+        "mean_sim": 0.3618379235267639,
+        "max_sim": 0.8005298376083374,
+        "min_sim": 0.2105896770954132,
+        "std_sim": 0.10216797143220901
+      },
+      {
+        "mean_sim": 0.41687411069869995,
+        "max_sim": 0.7047392129898071,
+        "min_sim": 0.1586076021194458,
+        "std_sim": 0.11562051624059677
+      },
+      {
+        "mean_sim": 0.4736347198486328,
+        "max_sim": 0.6398758292198181,
+        "min_sim": 0.30404114723205566,
+        "std_sim": 0.0856180265545845
+      },
+      {
+        "mean_sim": 0.494280070066452,
+        "max_sim": 0.7100493907928467,
+        "min_sim": 0.3073005676269531,
+        "std_sim": 0.10348834842443466
+      },
+      {
+        "mean_sim": 0.5058887600898743,
+        "max_sim": 0.6466314196586609,
+        "min_sim": 0.3977937698364258,
+        "std_sim": 0.06589838862419128
+      },
+      {
+        "mean_sim": 0.4398282766342163,
+        "max_sim": 0.6393753290176392,
+        "min_sim": 0.2510225474834442,
+        "std_sim": 0.10323809087276459
+      },
+      {
+        "mean_sim": 0.4564203917980194,
+        "max_sim": 0.6956689357757568,
+        "min_sim": 0.2249344140291214,
+        "std_sim": 0.12882284820079803
+      },
+      {
+        "mean_sim": 0.5303345322608948,
+        "max_sim": 0.7364065647125244,
+        "min_sim": 0.34445691108703613,
+        "std_sim": 0.09638524800539017
+      },
+      {
+        "mean_sim": 0.5866253972053528,
+        "max_sim": 0.8181859254837036,
+        "min_sim": 0.4256784915924072,
+        "std_sim": 0.09104128926992416
+      },
+      {
+        "mean_sim": 0.4682101011276245,
+        "max_sim": 0.670973002910614,
+        "min_sim": 0.23882067203521729,
+        "std_sim": 0.10013376921415329
+      },
+      {
+        "mean_sim": 0.4849003553390503,
+        "max_sim": 0.6359304189682007,
+        "min_sim": 0.28236329555511475,
+        "std_sim": 0.07223175466060638
+      },
+      {
+        "mean_sim": 0.4911913573741913,
+        "max_sim": 0.826948881149292,
+        "min_sim": 0.2921305298805237,
+        "std_sim": 0.09717024862766266
+      },
+      {
+        "mean_sim": 0.4530714154243469,
+        "max_sim": 0.6915556192398071,
+        "min_sim": 0.28881171345710754,
+        "std_sim": 0.10393869131803513
+      },
+      {
+        "mean_sim": 0.47503745555877686,
+        "max_sim": 0.7232447266578674,
+        "min_sim": 0.1771795153617859,
+        "std_sim": 0.1283569186925888
+      },
+      {
+        "mean_sim": 0.5261537432670593,
+        "max_sim": 0.6973603963851929,
+        "min_sim": 0.3666988015174866,
+        "std_sim": 0.08356274664402008
+      },
+      {
+        "mean_sim": 0.4934372901916504,
+        "max_sim": 0.676162838935852,
+        "min_sim": 0.29208722710609436,
+        "std_sim": 0.10068228095769882
+      },
+      {
+        "mean_sim": 0.4753766655921936,
+        "max_sim": 0.6972227692604065,
+        "min_sim": 0.2243899405002594,
+        "std_sim": 0.10730903595685959
+      },
+      {
+        "mean_sim": 0.4897966980934143,
+        "max_sim": 0.6903605461120605,
+        "min_sim": 0.2788202166557312,
+        "std_sim": 0.10490188747644424
+      },
+      {
+        "mean_sim": 0.5830827951431274,
+        "max_sim": 0.7612929344177246,
+        "min_sim": 0.41161954402923584,
+        "std_sim": 0.09477326273918152
+      },
+      {
+        "mean_sim": 0.5033957362174988,
+        "max_sim": 0.7030825018882751,
+        "min_sim": 0.31385692954063416,
+        "std_sim": 0.08793260902166367
+      },
+      {
+        "mean_sim": 0.38318753242492676,
+        "max_sim": 0.5686948299407959,
+        "min_sim": 0.17794430255889893,
+        "std_sim": 0.09624505043029785
+      },
+      {
+        "mean_sim": 0.5009820461273193,
+        "max_sim": 0.7645857930183411,
+        "min_sim": 0.34186193346977234,
+        "std_sim": 0.09509554505348206
+      },
+      {
+        "mean_sim": 0.40336549282073975,
+        "max_sim": 0.6765154600143433,
+        "min_sim": 0.12560224533081055,
+        "std_sim": 0.11316955089569092
+      },
+      {
+        "mean_sim": 0.4114972949028015,
+        "max_sim": 0.6866261959075928,
+        "min_sim": 0.18899275362491608,
+        "std_sim": 0.10981599986553192
+      },
+      {
+        "mean_sim": 0.5093574523925781,
+        "max_sim": 0.7645857930183411,
+        "min_sim": 0.36708158254623413,
+        "std_sim": 0.08064170181751251
+      },
+      {
+        "mean_sim": 0.6040154099464417,
+        "max_sim": 0.7843981981277466,
+        "min_sim": 0.44600459933280945,
+        "std_sim": 0.08587409555912018
+      },
+      {
+        "mean_sim": 0.5200158357620239,
+        "max_sim": 0.6704121232032776,
+        "min_sim": 0.34734171628952026,
+        "std_sim": 0.08319539576768875
+      },
+      {
+        "mean_sim": 0.4735261797904968,
+        "max_sim": 0.8234805464744568,
+        "min_sim": 0.27033448219299316,
+        "std_sim": 0.09334829449653625
+      },
+      {
+        "mean_sim": 0.4595184028148651,
+        "max_sim": 0.7270349264144897,
+        "min_sim": 0.18677498400211334,
+        "std_sim": 0.10653010755777359
+      },
+      {
+        "mean_sim": 0.4228135049343109,
+        "max_sim": 0.7567147612571716,
+        "min_sim": 0.19626525044441223,
+        "std_sim": 0.11238518357276917
+      },
+      {
+        "mean_sim": 0.4941781461238861,
+        "max_sim": 0.7442642450332642,
+        "min_sim": 0.16274455189704895,
+        "std_sim": 0.12368902564048767
+      },
+      {
+        "mean_sim": 0.43947872519493103,
+        "max_sim": 0.6615862846374512,
+        "min_sim": 0.2680109739303589,
+        "std_sim": 0.09630584716796875
+      },
+      {
+        "mean_sim": 0.49374619126319885,
+        "max_sim": 0.6847008466720581,
+        "min_sim": 0.24540448188781738,
+        "std_sim": 0.09330432862043381
+      },
+      {
+        "mean_sim": 0.4582505226135254,
+        "max_sim": 0.680050253868103,
+        "min_sim": 0.3274279236793518,
+        "std_sim": 0.08847551792860031
+      },
+      {
+        "mean_sim": 0.4999864399433136,
+        "max_sim": 0.6859799027442932,
+        "min_sim": 0.37035900354385376,
+        "std_sim": 0.0758114829659462
+      },
+      {
+        "mean_sim": 0.4331207573413849,
+        "max_sim": 0.6993730664253235,
+        "min_sim": 0.2207474410533905,
+        "std_sim": 0.0996851697564125
+      }
+    ],
+    "detailed_results": [
+      {
+        "question": "What is the FY2018 capital expenditure amount (in USD millions) for 3M? Give a response to the question by relying on the details shown in the cash flow statement.",
+        "output_tokens": 5800,
+        "hit": 1,
+        "latency": 20.223334550857544,
+        "diversity": {
+          "mean_sim": 0.5287355780601501,
+          "max_sim": 0.689173698425293,
+          "min_sim": 0.33836543560028076,
+          "std_sim": 0.08821600675582886
+        }
+      },
+      {
+        "question": "Assume that you are a public equities analyst. Answer the following question by primarily using information that is shown in the balance sheet: what is the year end FY2018 net PPNE for 3M? Answer in USD billions.",
+        "output_tokens": 2507,
+        "hit": 1,
+        "latency": 20.45497703552246,
+        "diversity": {
+          "mean_sim": 0.47245314717292786,
+          "max_sim": 0.6515493392944336,
+          "min_sim": 0.29913026094436646,
+          "std_sim": 0.07271760702133179
+        }
+      },
+      {
+        "question": "Is 3M a capital-intensive business based on FY2022 data?",
+        "output_tokens": 3349,
+        "hit": 1,
+        "latency": 16.99659538269043,
+        "diversity": {
+          "mean_sim": 0.5138641595840454,
+          "max_sim": 0.7586501836776733,
+          "min_sim": 0.2755809426307678,
+          "std_sim": 0.09664148837327957
+        }
+      },
+      {
+        "question": "What drove operating margin change as of FY2022 for 3M? If operating margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 5655,
+        "hit": 1,
+        "latency": 18.704235792160034,
+        "diversity": {
+          "mean_sim": 0.46316635608673096,
+          "max_sim": 0.7075707912445068,
+          "min_sim": 0.24687132239341736,
+          "std_sim": 0.10375130921602249
+        }
+      },
+      {
+        "question": "If we exclude the impact of M&A, which segment has dragged down 3M's overall growth in 2022?",
+        "output_tokens": 5805,
+        "hit": 1,
+        "latency": 19.146516799926758,
+        "diversity": {
+          "mean_sim": 0.45461124181747437,
+          "max_sim": 0.6879266500473022,
+          "min_sim": 0.23879680037498474,
+          "std_sim": 0.0977790504693985
+        }
+      },
+      {
+        "question": "Does 3M have a reasonably healthy liquidity profile based on its quick ratio for Q2 of FY2023? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+        "output_tokens": 2975,
+        "hit": 1,
+        "latency": 16.355329990386963,
+        "diversity": {
+          "mean_sim": 0.4221666157245636,
+          "max_sim": 0.7225055694580078,
+          "min_sim": 0.14748930931091309,
+          "std_sim": 0.11862116307020187
+        }
+      },
+      {
+        "question": "Which debt securities are registered to trade on a national securities exchange under 3M's name as of Q2 of 2023?",
+        "output_tokens": 4761,
+        "hit": 1,
+        "latency": 16.87812900543213,
+        "diversity": {
+          "mean_sim": 0.5043461322784424,
+          "max_sim": 0.8072012066841125,
+          "min_sim": 0.3051470220088959,
+          "std_sim": 0.11554764211177826
+        }
+      },
+      {
+        "question": "Does 3M maintain a stable trend of dividend distribution?",
+        "output_tokens": 3806,
+        "hit": 0,
+        "latency": 16.74005365371704,
+        "diversity": {
+          "mean_sim": 0.45463454723358154,
+          "max_sim": 0.7248877286911011,
+          "min_sim": 0.20827579498291016,
+          "std_sim": 0.12474092841148376
+        }
+      },
+      {
+        "question": "What is the FY2019 fixed asset turnover ratio for Activision Blizzard? Fixed asset turnover ratio is defined as: FY2019 revenue / (average PP&E between FY2018 and FY2019). Round your answer to two decimal places. Base your judgments on the information provided primarily in the statement of income and the statement of financial position.",
+        "output_tokens": 3230,
+        "hit": 1,
+        "latency": 19.92769193649292,
+        "diversity": {
+          "mean_sim": 0.5400508046150208,
+          "max_sim": 0.7847270369529724,
+          "min_sim": 0.3851209282875061,
+          "std_sim": 0.10768220573663712
+        }
+      },
+      {
+        "question": "What is the FY2017 - FY2019 3 year average of capex as a % of revenue for Activision Blizzard? Answer in units of percents and round to one decimal place. Calculate (or extract) the answer from the statement of income and the cash flow statement.",
+        "output_tokens": 2513,
+        "hit": 1,
+        "latency": 17.763232469558716,
+        "diversity": {
+          "mean_sim": 0.46093887090682983,
+          "max_sim": 0.6783415079116821,
+          "min_sim": 0.22064727544784546,
+          "std_sim": 0.11871819943189621
+        }
+      },
+      {
+        "question": "You are an investment banker and your only resource(s) to answer the following question is (are): the statement of financial position and the cash flow statement. Here's the question: what is the FY2015 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places.",
+        "output_tokens": 3466,
+        "hit": 0,
+        "latency": 19.052546977996826,
+        "diversity": {
+          "mean_sim": 0.572439432144165,
+          "max_sim": 0.7064427137374878,
+          "min_sim": 0.44747206568717957,
+          "std_sim": 0.05704924091696739
+        }
+      },
+      {
+        "question": "What is Adobe's year-over-year change in unadjusted operating income from FY2015 to FY2016 (in units of percents and round to one decimal place)? Give a solution to the question by using the income statement.",
+        "output_tokens": 2441,
+        "hit": 0,
+        "latency": 20.942384958267212,
+        "diversity": {
+          "mean_sim": 0.5116026997566223,
+          "max_sim": 0.6893552541732788,
+          "min_sim": 0.3447991609573364,
+          "std_sim": 0.08783383667469025
+        }
+      },
+      {
+        "question": "What is the FY2017 operating cash flow ratio for Adobe? Operating cash flow ratio is defined as: cash from operations / total current liabilities. Round your answer to two decimal places. Please utilize information provided primarily within the balance sheet and the cash flow statement.",
+        "output_tokens": 3221,
+        "hit": 0,
+        "latency": 17.993629693984985,
+        "diversity": {
+          "mean_sim": 0.5399488806724548,
+          "max_sim": 0.7913004755973816,
+          "min_sim": 0.39726942777633667,
+          "std_sim": 0.08516710251569748
+        }
+      },
+      {
+        "question": "Does Adobe have an improving operating margin profile as of FY2022? If operating margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 4812,
+        "hit": 1,
+        "latency": 18.15871286392212,
+        "diversity": {
+          "mean_sim": 0.43423813581466675,
+          "max_sim": 0.6604289412498474,
+          "min_sim": 0.15336374938488007,
+          "std_sim": 0.13678479194641113
+        }
+      },
+      {
+        "question": "Does Adobe have an improving Free cashflow conversion as of FY2022?",
+        "output_tokens": 2791,
+        "hit": 1,
+        "latency": 19.449004888534546,
+        "diversity": {
+          "mean_sim": 0.45288243889808655,
+          "max_sim": 0.7173125147819519,
+          "min_sim": 0.09266269207000732,
+          "std_sim": 0.14452461898326874
+        }
+      },
+      {
+        "question": "What is the quantity of restructuring costs directly outlined in AES Corporation's income statements for FY2022? If restructuring costs are not explicitly outlined then state 0.",
+        "output_tokens": 2944,
+        "hit": 1,
+        "latency": 18.277993202209473,
+        "diversity": {
+          "mean_sim": 0.6056802272796631,
+          "max_sim": 0.8005353212356567,
+          "min_sim": 0.34011605381965637,
+          "std_sim": 0.0849623903632164
+        }
+      },
+      {
+        "question": "Roughly how many times has AES Corporation sold its inventory in FY2022? Calculate inventory turnover ratio for the FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+        "output_tokens": 3840,
+        "hit": 1,
+        "latency": 19.89862585067749,
+        "diversity": {
+          "mean_sim": 0.4802471697330475,
+          "max_sim": 0.7042516469955444,
+          "min_sim": 0.25011879205703735,
+          "std_sim": 0.10344556719064713
+        }
+      },
+      {
+        "question": "Based on the information provided primarily in the statement of financial position and the statement of income, what is AES's FY2022 return on assets (ROA)? ROA is defined as: FY2022 net income / (average total assets between FY2021 and FY2022). Round your answer to two decimal places.",
+        "output_tokens": 2937,
+        "hit": 1,
+        "latency": 19.575390815734863,
+        "diversity": {
+          "mean_sim": 0.4551760256290436,
+          "max_sim": 0.6095466613769531,
+          "min_sim": 0.30459463596343994,
+          "std_sim": 0.07213376462459564
+        }
+      },
+      {
+        "question": "What is Amazon's FY2017 days payable outstanding (DPO)? DPO is defined as: 365 * (average accounts payable between FY2016 and FY2017) / (FY2017 COGS + change in inventory between FY2016 and FY2017). Round your answer to two decimal places. Address the question by using the line items and information shown within the balance sheet and the P&L statement.",
+        "output_tokens": 2198,
+        "hit": 1,
+        "latency": 20.79767632484436,
+        "diversity": {
+          "mean_sim": 0.46105799078941345,
+          "max_sim": 0.6885251998901367,
+          "min_sim": 0.22542212903499603,
+          "std_sim": 0.0985625833272934
+        }
+      },
+      {
+        "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+        "output_tokens": 3960,
+        "hit": 1,
+        "latency": 18.707418203353882,
+        "diversity": {
+          "mean_sim": 0.5334159731864929,
+          "max_sim": 0.781277596950531,
+          "min_sim": 0.3723944425582886,
+          "std_sim": 0.08715442568063736
+        }
+      },
+      {
+        "question": "By drawing conclusions from the information stated only in the income statement, what is Amazon's FY2019 net income attributable to shareholders (in USD millions)?",
+        "output_tokens": 3306,
+        "hit": 1,
+        "latency": 17.28676199913025,
+        "diversity": {
+          "mean_sim": 0.5383207201957703,
+          "max_sim": 0.7224036455154419,
+          "min_sim": 0.3296188712120056,
+          "std_sim": 0.09244422614574432
+        }
+      },
+      {
+        "question": "What is Amcor's year end FY2020 net AR (in USD millions)? Address the question by adopting the perspective of a financial analyst who can only use the details shown within the balance sheet.",
+        "output_tokens": 4678,
+        "hit": 1,
+        "latency": 16.519890069961548,
+        "diversity": {
+          "mean_sim": 0.5380346775054932,
+          "max_sim": 0.781128466129303,
+          "min_sim": 0.3193560838699341,
+          "std_sim": 0.11654941737651825
+        }
+      },
+      {
+        "question": "What was the key agenda of the AMCOR's 8k filing dated 1st July 2022?",
+        "output_tokens": 2847,
+        "hit": 1,
+        "latency": 14.40902042388916,
+        "diversity": {
+          "mean_sim": 0.4773017466068268,
+          "max_sim": 0.646510660648346,
+          "min_sim": 0.21594369411468506,
+          "std_sim": 0.10717441141605377
+        }
+      },
+      {
+        "question": "Has AMCOR's quick ratio improved or declined between FY2023 and FY2022? If the quick ratio is not something that a financial analyst would ask about a company like this, then state that and explain why.",
+        "output_tokens": 3584,
+        "hit": 1,
+        "latency": 16.241609811782837,
+        "diversity": {
+          "mean_sim": 0.47237664461135864,
+          "max_sim": 0.6997196078300476,
+          "min_sim": 0.28928181529045105,
+          "std_sim": 0.09548400342464447
+        }
+      },
+      {
+        "question": "What are major acquisitions that AMCOR has done in FY2023, FY2022 and FY2021?",
+        "output_tokens": 3850,
+        "hit": 0,
+        "latency": 18.970138549804688,
+        "diversity": {
+          "mean_sim": 0.3978285789489746,
+          "max_sim": 0.609351396560669,
+          "min_sim": 0.25501498579978943,
+          "std_sim": 0.08204793184995651
+        }
+      },
+      {
+        "question": "What industry does AMCOR primarily operate in?",
+        "output_tokens": 5855,
+        "hit": 1,
+        "latency": 16.009565591812134,
+        "diversity": {
+          "mean_sim": 0.43794941902160645,
+          "max_sim": 0.6805601119995117,
+          "min_sim": 0.1407918930053711,
+          "std_sim": 0.12942533195018768
+        }
+      },
+      {
+        "question": "Does AMCOR have an improving gross margin profile as of FY2023? If gross margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 4728,
+        "hit": 1,
+        "latency": 16.96657371520996,
+        "diversity": {
+          "mean_sim": 0.5132632851600647,
+          "max_sim": 0.7694101929664612,
+          "min_sim": 0.2955380082130432,
+          "std_sim": 0.12082358449697495
+        }
+      },
+      {
+        "question": "What is the nature & purpose of AMCOR's restructuring liability as oF Q2 of FY2023 close?",
+        "output_tokens": 4864,
+        "hit": 1,
+        "latency": 18.78979802131653,
+        "diversity": {
+          "mean_sim": 0.43828827142715454,
+          "max_sim": 0.7808451652526855,
+          "min_sim": 0.2823951840400696,
+          "std_sim": 0.10310477763414383
+        }
+      },
+      {
+        "question": "What Was AMCOR's Adjusted Non GAAP EBITDA for FY 2023",
+        "output_tokens": 6098,
+        "hit": 1,
+        "latency": 17.160403966903687,
+        "diversity": {
+          "mean_sim": 0.5340667963027954,
+          "max_sim": 0.7654621601104736,
+          "min_sim": 0.2965223491191864,
+          "std_sim": 0.10694289207458496
+        }
+      },
+      {
+        "question": "How much was the Real change in Sales for AMCOR in FY 2023 vs FY 2022, if we exclude the impact of FX movement, passthrough costs and one-off items?",
+        "output_tokens": 2491,
+        "hit": 1,
+        "latency": 16.346911430358887,
+        "diversity": {
+          "mean_sim": 0.5322641730308533,
+          "max_sim": 0.7692816257476807,
+          "min_sim": 0.2746795415878296,
+          "std_sim": 0.10979855805635452
+        }
+      },
+      {
+        "question": "Answer the following question as if you are an equity research analyst and have lost internet connection so you do not have access to financial metric providers. According to the details clearly outlined within the P&L statement and the statement of cash flows, what is the FY2015 depreciation and amortization (D&A from cash flow statement) % margin for AMD?",
+        "output_tokens": 3789,
+        "hit": 1,
+        "latency": 20.31284189224243,
+        "diversity": {
+          "mean_sim": 0.5148969292640686,
+          "max_sim": 0.702602744102478,
+          "min_sim": 0.2827940285205841,
+          "std_sim": 0.08793503046035767
+        }
+      },
+      {
+        "question": "Does AMD have a reasonably healthy liquidity profile based on its quick ratio for FY22? If the quick ratio is not relevant to measure liquidity, please state that and explain why.",
+        "output_tokens": 4577,
+        "hit": 1,
+        "latency": 19.586392402648926,
+        "diversity": {
+          "mean_sim": 0.3989241421222687,
+          "max_sim": 0.7391436100006104,
+          "min_sim": 0.05741339176893234,
+          "std_sim": 0.1814069300889969
+        }
+      },
+      {
+        "question": "What are the major products and services that AMD sells as of FY22?",
+        "output_tokens": 4665,
+        "hit": 1,
+        "latency": 17.712623357772827,
+        "diversity": {
+          "mean_sim": 0.4405834972858429,
+          "max_sim": 0.6165103912353516,
+          "min_sim": 0.1486767828464508,
+          "std_sim": 0.1183537095785141
+        }
+      },
+      {
+        "question": "What drove revenue change as of the FY22 for AMD?",
+        "output_tokens": 4049,
+        "hit": 1,
+        "latency": 16.471484184265137,
+        "diversity": {
+          "mean_sim": 0.46713507175445557,
+          "max_sim": 0.612562894821167,
+          "min_sim": 0.17918643355369568,
+          "std_sim": 0.09648764133453369
+        }
+      },
+      {
+        "question": "What drove operating margin change as of the FY22 for AMD? If operating margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 4505,
+        "hit": 1,
+        "latency": 20.05293893814087,
+        "diversity": {
+          "mean_sim": 0.4795489013195038,
+          "max_sim": 0.7314655780792236,
+          "min_sim": 0.14673304557800293,
+          "std_sim": 0.13151918351650238
+        }
+      },
+      {
+        "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for AMD in FY22?",
+        "output_tokens": 2933,
+        "hit": 0,
+        "latency": 17.736806392669678,
+        "diversity": {
+          "mean_sim": 0.5372268557548523,
+          "max_sim": 0.7630398273468018,
+          "min_sim": 0.20342683792114258,
+          "std_sim": 0.17024771869182587
+        }
+      },
+      {
+        "question": "From FY21 to FY22, excluding Embedded, in which AMD reporting segment did sales proportionally increase the most?",
+        "output_tokens": 5903,
+        "hit": 1,
+        "latency": 18.170276165008545,
+        "diversity": {
+          "mean_sim": 0.46416354179382324,
+          "max_sim": 0.7133499383926392,
+          "min_sim": 0.2205321341753006,
+          "std_sim": 0.12794137001037598
+        }
+      },
+      {
+        "question": "Did AMD report customer concentration in FY22?",
+        "output_tokens": 5334,
+        "hit": 1,
+        "latency": 17.225017309188843,
+        "diversity": {
+          "mean_sim": 0.48440131545066833,
+          "max_sim": 0.8442494869232178,
+          "min_sim": 0.281279057264328,
+          "std_sim": 0.09185994416475296
+        }
+      },
+      {
+        "question": "Which debt securities are registered to trade on a national securities exchange under American Express' name as of 2022?",
+        "output_tokens": 4588,
+        "hit": 1,
+        "latency": 12.9927978515625,
+        "diversity": {
+          "mean_sim": 0.4722960889339447,
+          "max_sim": 0.7501523494720459,
+          "min_sim": 0.2698047459125519,
+          "std_sim": 0.09627600014209747
+        }
+      },
+      {
+        "question": "What are the geographies that American Express primarily operates in as of 2022?",
+        "output_tokens": 4844,
+        "hit": 1,
+        "latency": 17.383887767791748,
+        "diversity": {
+          "mean_sim": 0.3618379235267639,
+          "max_sim": 0.8005298376083374,
+          "min_sim": 0.2105896770954132,
+          "std_sim": 0.10216797143220901
+        }
+      },
+      {
+        "question": "Does AMEX have an improving operating margin profile as of 2022? If operating margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 2560,
+        "hit": 1,
+        "latency": 20.980581283569336,
+        "diversity": {
+          "mean_sim": 0.41687411069869995,
+          "max_sim": 0.7047392129898071,
+          "min_sim": 0.1586076021194458,
+          "std_sim": 0.11562051624059677
+        }
+      },
+      {
+        "question": "What drove gross margin change as of the FY2022 for American Express? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 2176,
+        "hit": 1,
+        "latency": 19.512784004211426,
+        "diversity": {
+          "mean_sim": 0.4736347198486328,
+          "max_sim": 0.6398758292198181,
+          "min_sim": 0.30404114723205566,
+          "std_sim": 0.0856180265545845
+        }
+      },
+      {
+        "question": "How much has the effective tax rate of American Express changed between FY2021 and FY2022?",
+        "output_tokens": 3324,
+        "hit": 1,
+        "latency": 16.61259889602661,
+        "diversity": {
+          "mean_sim": 0.494280070066452,
+          "max_sim": 0.7100493907928467,
+          "min_sim": 0.3073005676269531,
+          "std_sim": 0.10348834842443466
+        }
+      },
+      {
+        "question": "What was the largest liability in American Express's Balance Sheet in 2022?",
+        "output_tokens": 2691,
+        "hit": 1,
+        "latency": 22.509506940841675,
+        "diversity": {
+          "mean_sim": 0.5058887600898743,
+          "max_sim": 0.6466314196586609,
+          "min_sim": 0.3977937698364258,
+          "std_sim": 0.06589838862419128
+        }
+      },
+      {
+        "question": "Was American Express able to retain card members during 2022?",
+        "output_tokens": 2953,
+        "hit": 1,
+        "latency": 21.862621784210205,
+        "diversity": {
+          "mean_sim": 0.4398282766342163,
+          "max_sim": 0.6393753290176392,
+          "min_sim": 0.2510225474834442,
+          "std_sim": 0.10323809087276459
+        }
+      },
+      {
+        "question": "How much (in USD billions) did American Water Works pay out in cash dividends for FY2020? Compute or extract the answer by primarily using the details outlined in the statement of cash flows.",
+        "output_tokens": 3231,
+        "hit": 1,
+        "latency": 16.099821090698242,
+        "diversity": {
+          "mean_sim": 0.4564203917980194,
+          "max_sim": 0.6956689357757568,
+          "min_sim": 0.2249344140291214,
+          "std_sim": 0.12882284820079803
+        }
+      },
+      {
+        "question": "Basing your judgments off of the cash flow statement and the income statement, what is American Water Works's FY2021 unadjusted operating income + depreciation and amortization from the cash flow statement (unadjusted EBITDA) in USD millions?",
+        "output_tokens": 3547,
+        "hit": 1,
+        "latency": 19.972251892089844,
+        "diversity": {
+          "mean_sim": 0.5303345322608948,
+          "max_sim": 0.7364065647125244,
+          "min_sim": 0.34445691108703613,
+          "std_sim": 0.09638524800539017
+        }
+      },
+      {
+        "question": "Does American Water Works have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+        "output_tokens": 2991,
+        "hit": 1,
+        "latency": 10.924768686294556,
+        "diversity": {
+          "mean_sim": 0.5866253972053528,
+          "max_sim": 0.8181859254837036,
+          "min_sim": 0.4256784915924072,
+          "std_sim": 0.09104128926992416
+        }
+      },
+      {
+        "question": "In agreement with the information outlined in the income statement, what is the FY2015 - FY2017 3 year average net profit margin (as a %) for Best Buy? Answer in units of percents and round to one decimal place.",
+        "output_tokens": 2304,
+        "hit": 1,
+        "latency": 19.650573015213013,
+        "diversity": {
+          "mean_sim": 0.4682101011276245,
+          "max_sim": 0.670973002910614,
+          "min_sim": 0.23882067203521729,
+          "std_sim": 0.10013376921415329
+        }
+      },
+      {
+        "question": "What is the year end FY2019 total amount of inventories for Best Buy? Answer in USD millions. Base your judgments on the information provided primarily in the balance sheet.",
+        "output_tokens": 3751,
+        "hit": 1,
+        "latency": 16.897711753845215,
+        "diversity": {
+          "mean_sim": 0.4849003553390503,
+          "max_sim": 0.6359304189682007,
+          "min_sim": 0.28236329555511475,
+          "std_sim": 0.07223175466060638
+        }
+      },
+      {
+        "question": "Are Best Buy's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+        "output_tokens": 2605,
+        "hit": 1,
+        "latency": 20.000566720962524,
+        "diversity": {
+          "mean_sim": 0.4911913573741913,
+          "max_sim": 0.826948881149292,
+          "min_sim": 0.2921305298805237,
+          "std_sim": 0.09717024862766266
+        }
+      },
+      {
+        "question": "What are major acquisitions that Best Buy has done in FY2023, FY2022 and FY2021?",
+        "output_tokens": 5335,
+        "hit": 1,
+        "latency": 20.759272575378418,
+        "diversity": {
+          "mean_sim": 0.4530714154243469,
+          "max_sim": 0.6915556192398071,
+          "min_sim": 0.28881171345710754,
+          "std_sim": 0.10393869131803513
+        }
+      },
+      {
+        "question": "Among operations, investing, and financing activities, which brought in the most (or lost the least) cash flow for Best Buy in FY2023?",
+        "output_tokens": 2472,
+        "hit": 1,
+        "latency": 19.519870281219482,
+        "diversity": {
+          "mean_sim": 0.47503745555877686,
+          "max_sim": 0.7232447266578674,
+          "min_sim": 0.1771795153617859,
+          "std_sim": 0.1283569186925888
+        }
+      },
+      {
+        "question": "Was there any drop in Cash & Cash equivalents between FY 2023 and Q2 of FY2024?",
+        "output_tokens": 4219,
+        "hit": 1,
+        "latency": 22.955546855926514,
+        "diversity": {
+          "mean_sim": 0.5261537432670593,
+          "max_sim": 0.6973603963851929,
+          "min_sim": 0.3666988015174866,
+          "std_sim": 0.08356274664402008
+        }
+      },
+      {
+        "question": "Was there any change in the number of Best Buy stores between Q2 of FY2024 and FY2023?",
+        "output_tokens": 4878,
+        "hit": 1,
+        "latency": 17.652491331100464,
+        "diversity": {
+          "mean_sim": 0.4934372901916504,
+          "max_sim": 0.676162838935852,
+          "min_sim": 0.29208722710609436,
+          "std_sim": 0.10068228095769882
+        }
+      },
+      {
+        "question": "Which Best Buy product category performed the best (by top line) in the domestic (USA) Market during Q2 of FY2024?",
+        "output_tokens": 6334,
+        "hit": 1,
+        "latency": 19.149864673614502,
+        "diversity": {
+          "mean_sim": 0.4753766655921936,
+          "max_sim": 0.6972227692604065,
+          "min_sim": 0.2243899405002594,
+          "std_sim": 0.10730903595685959
+        }
+      },
+      {
+        "question": "What is the FY2019 - FY2020 total revenue growth rate for Block (formerly known as Square)? Answer in units of percents and round to one decimal place. Approach the question asked by assuming the standpoint of an investment banking analyst who only has access to the statement of income.",
+        "output_tokens": 3723,
+        "hit": 1,
+        "latency": 20.88564395904541,
+        "diversity": {
+          "mean_sim": 0.4897966980934143,
+          "max_sim": 0.6903605461120605,
+          "min_sim": 0.2788202166557312,
+          "std_sim": 0.10490188747644424
+        }
+      },
+      {
+        "question": "Using the cash flow statement, answer the following question to the best of your abilities: how much did Block (formerly known as Square) generate in cash flow from operating activities in FY2020? Answer in USD millions.",
+        "output_tokens": 4467,
+        "hit": 1,
+        "latency": 19.868457317352295,
+        "diversity": {
+          "mean_sim": 0.5830827951431274,
+          "max_sim": 0.7612929344177246,
+          "min_sim": 0.41161954402923584,
+          "std_sim": 0.09477326273918152
+        }
+      },
+      {
+        "question": "Are there any product categories / service categories that represent more than 20% of Boeing's revenue for FY2022?",
+        "output_tokens": 2048,
+        "hit": 1,
+        "latency": 17.333226919174194,
+        "diversity": {
+          "mean_sim": 0.5033957362174988,
+          "max_sim": 0.7030825018882751,
+          "min_sim": 0.31385692954063416,
+          "std_sim": 0.08793260902166367
+        }
+      },
+      {
+        "question": "Has Boeing reported any materially important ongoing legal battles from FY2022?",
+        "output_tokens": 2560,
+        "hit": 1,
+        "latency": 20.082869291305542,
+        "diversity": {
+          "mean_sim": 0.38318753242492676,
+          "max_sim": 0.5686948299407959,
+          "min_sim": 0.17794430255889893,
+          "std_sim": 0.09624505043029785
+        }
+      },
+      {
+        "question": "Does Boeing have an improving gross margin profile as of FY2022? If gross margin is not a useful metric for a company like this, then state that and explain why.",
+        "output_tokens": 2176,
+        "hit": 1,
+        "latency": 18.324015855789185,
+        "diversity": {
+          "mean_sim": 0.5009820461273193,
+          "max_sim": 0.7645857930183411,
+          "min_sim": 0.34186193346977234,
+          "std_sim": 0.09509554505348206
+        }
+      },
+      {
+        "question": "Who are the primary customers of Boeing as of FY2022?",
+        "output_tokens": 2545,
+        "hit": 1,
+        "latency": 19.6037495136261,
+        "diversity": {
+          "mean_sim": 0.40336549282073975,
+          "max_sim": 0.6765154600143433,
+          "min_sim": 0.12560224533081055,
+          "std_sim": 0.11316955089569092
+        }
+      },
+      {
+        "question": "Is Boeing's business subject to cyclicality?",
+        "output_tokens": 2925,
+        "hit": 1,
+        "latency": 19.410072565078735,
+        "diversity": {
+          "mean_sim": 0.4114972949028015,
+          "max_sim": 0.6866261959075928,
+          "min_sim": 0.18899275362491608,
+          "std_sim": 0.10981599986553192
+        }
+      },
+      {
+        "question": "What production rate changes is Boeing forecasting for FY2023?",
+        "output_tokens": 1982,
+        "hit": 1,
+        "latency": 17.901981115341187,
+        "diversity": {
+          "mean_sim": 0.5093574523925781,
+          "max_sim": 0.7645857930183411,
+          "min_sim": 0.36708158254623413,
+          "std_sim": 0.08064170181751251
+        }
+      },
+      {
+        "question": "How does Boeing's effective tax rate in FY2022 compare to FY2021?",
+        "output_tokens": 2974,
+        "hit": 1,
+        "latency": 16.55417227745056,
+        "diversity": {
+          "mean_sim": 0.6040154099464417,
+          "max_sim": 0.7843981981277466,
+          "min_sim": 0.44600459933280945,
+          "std_sim": 0.08587409555912018
+        }
+      },
+      {
+        "question": "How much has the effective tax rate of Corning changed between FY2021 and FY2022?",
+        "output_tokens": 3522,
+        "hit": 1,
+        "latency": 16.176140546798706,
+        "diversity": {
+          "mean_sim": 0.5200158357620239,
+          "max_sim": 0.6704121232032776,
+          "min_sim": 0.34734171628952026,
+          "std_sim": 0.08319539576768875
+        }
+      },
+      {
+        "question": "Does Corning have positive working capital based on FY2022 data? If working capital is not a useful or relevant metric for this company, then please state that and explain why.",
+        "output_tokens": 4349,
+        "hit": 1,
+        "latency": 20.010797023773193,
+        "diversity": {
+          "mean_sim": 0.4735261797904968,
+          "max_sim": 0.8234805464744568,
+          "min_sim": 0.27033448219299316,
+          "std_sim": 0.09334829449653625
+        }
+      },
+      {
+        "question": "Is CVS Health a capital-intensive business based on FY2022 data?",
+        "output_tokens": 2688,
+        "hit": 1,
+        "latency": 21.237906455993652,
+        "diversity": {
+          "mean_sim": 0.4595184028148651,
+          "max_sim": 0.7270349264144897,
+          "min_sim": 0.18677498400211334,
+          "std_sim": 0.10653010755777359
+        }
+      },
+      {
+        "question": "Has CVS Health reported any materially important ongoing legal battles from 2022, 2021 and 2020?",
+        "output_tokens": 3992,
+        "hit": 1,
+        "latency": 20.246816158294678,
+        "diversity": {
+          "mean_sim": 0.4228135049343109,
+          "max_sim": 0.7567147612571716,
+          "min_sim": 0.19626525044441223,
+          "std_sim": 0.11238518357276917
+        }
+      },
+      {
+        "question": "Has CVS Health paid dividends to common shareholders in Q2 of FY2022?",
+        "output_tokens": 3444,
+        "hit": 1,
+        "latency": 17.84482216835022,
+        "diversity": {
+          "mean_sim": 0.4941781461238861,
+          "max_sim": 0.7442642450332642,
+          "min_sim": 0.16274455189704895,
+          "std_sim": 0.12368902564048767
+        }
+      },
+      {
+        "question": "By drawing conclusions from the information stated only in the statement of financial position, what is General Mills's FY2020 working capital ratio? Define working capital ratio as total current assets divided by total current liabilities. Round your answer to two decimal places.",
+        "output_tokens": 2451,
+        "hit": 1,
+        "latency": 19.64941120147705,
+        "diversity": {
+          "mean_sim": 0.43947872519493103,
+          "max_sim": 0.6615862846374512,
+          "min_sim": 0.2680109739303589,
+          "std_sim": 0.09630584716796875
+        }
+      },
+      {
+        "question": "According to the information provided in the statement of cash flows, what is the FY2020 free cash flow (FCF) for General Mills? FCF here is defined as: (cash from operations - capex). Answer in USD millions.",
+        "output_tokens": 6336,
+        "hit": 1,
+        "latency": 19.431562900543213,
+        "diversity": {
+          "mean_sim": 0.49374619126319885,
+          "max_sim": 0.6847008466720581,
+          "min_sim": 0.24540448188781738,
+          "std_sim": 0.09330432862043381
+        }
+      },
+      {
+        "question": "Are JnJ's FY2022 financials that of a high growth company?",
+        "output_tokens": 3228,
+        "hit": 1,
+        "latency": 18.50346326828003,
+        "diversity": {
+          "mean_sim": 0.4582505226135254,
+          "max_sim": 0.680050253868103,
+          "min_sim": 0.3274279236793518,
+          "std_sim": 0.08847551792860031
+        }
+      },
+      {
+        "question": "What drove gross margin change as of FY2022 for JnJ? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+        "output_tokens": 2848,
+        "hit": 0,
+        "latency": 19.486260652542114,
+        "diversity": {
+          "mean_sim": 0.4999864399433136,
+          "max_sim": 0.6859799027442932,
+          "min_sim": 0.37035900354385376,
+          "std_sim": 0.0758114829659462
+        }
+      },
+      {
+        "question": "Roughly how many times has JnJ sold its inventory in FY2022? Calculate inventory turnover ratio for FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+        "output_tokens": 2432,
+        "hit": 1,
+        "latency": 22.465904235839844,
+        "diversity": {
+          "mean_sim": 0.4331207573413849,
+          "max_sim": 0.6993730664253235,
+          "min_sim": 0.2207474410533905,
+          "std_sim": 0.0996851697564125
+        }
+      }
+    ]
+  }
+}

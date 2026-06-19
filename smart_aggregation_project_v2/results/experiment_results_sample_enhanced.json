@@ -1,0 +1,286 @@
+{
+  "dataset": "Sample",
+  "num_documents": 3,
+  "num_questions_tested": 10,
+  "total_chunks": 37,
+  "baseline_accuracy": {
+    "fixed-512": 1.0,
+    "element-based": 1.0
+  },
+  "smart_aggregation_accuracy": 1.0,
+  "improvement_percent": 0.0,
+  "token_stats": {
+    "total_input_tokens": 1409,
+    "total_chunk_tokens": 5636,
+    "avg_output_tokens_per_query": 970.3,
+    "compression_ratio": 5.808512831083171,
+    "by_stage": {
+      "retrieval": {
+        "output_tokens": 18240
+      },
+      "deduplication": {
+        "output_tokens": 10944
+      },
+      "reranking": {
+        "output_tokens": 3040
+      },
+      "final": {
+        "output_tokens": 970.3
+      }
+    }
+  },
+  "timing_stats": {
+    "retrieval_time": 0.129652738571167,
+    "dedup_time": 0.008011341094970703,
+    "rerank_time": 39.279563903808594,
+    "mmr_time": 0.021097183227539062
+  },
+  "chunk_distribution": {
+    "fixed-128": 13,
+    "fixed-256": 7,
+    "fixed-512": 4,
+    "element-based": 13
+  },
+  "detailed_results": [
+    {
+      "question": "What was TechCorp's Q4 2023 revenue?",
+      "query_tokens": 6,
+      "output_tokens": 870,
+      "num_chunks": 10,
+      "metrics": {
+        "precision@5": 0.8,
+        "recall@5": 4.0,
+        "f1@5": 1.3333333333333335,
+        "precision@10": 0.6,
+        "recall@10": 6.0,
+        "f1@10": 1.0909090909090908,
+        "ndcg@5": 1.0,
+        "ndcg@10": 0.971476156593264,
+        "map": 5.464285714285714
+      },
+      "timing": {
+        "step1_time": 0.03708600997924805,
+        "step2_time": 0.0021550655364990234,
+        "step3_time": 2.654231309890747,
+        "step4_time": 0.002520322799682617,
+        "total_time": 2.6968541145324707
+      }
+    },
+    {
+      "question": "Calculate TechCorp's year-over-year revenue growth rate from 2022 to 2023.",
+      "query_tokens": 10,
+      "output_tokens": 1073,
+      "num_chunks": 10,
+      "metrics": {
+        "precision@5": 1.0,
+        "recall@5": 5.0,
+        "f1@5": 1.6666666666666667,
+        "precision@10": 0.7,
+        "recall@10": 7.0,
+        "f1@10": 1.2727272727272725,
+        "ndcg@5": 1.0,
+        "ndcg@10": 0.9878316351280039,
+        "map": 6.7
+      },
+      "timing": {
+        "step1_time": 0.014141559600830078,
+        "step2_time": 0.00046634674072265625,
+        "step3_time": 4.83736252784729,
+        "step4_time": 0.0020787715911865234,
+        "total_time": 4.854473114013672
+      }
+    },
+    {
+      "question": "What was TechCorp's cloud services revenue in 2023?",
+      "query_tokens": 8,
+      "output_tokens": 1193,
+      "num_chunks": 10,
+      "metrics": {
+        "precision@5": 1.0,
+        "recall@5": 5.0,
+        "f1@5": 1.6666666666666667,
+        "precision@10": 0.6,
+        "recall@10": 6.0,
+        "f1@10": 1.0909090909090908,
+        "ndcg@5": 1.0,
+        "ndcg@10": 1.0,
+        "map": 6.0
+      },
+      "timing": {
+        "step1_time": 0.0075070858001708984,
+        "step2_time": 0.0005018711090087891,
+        "step3_time": 4.7943806648254395,
+        "step4_time": 0.0024526119232177734,
+        "total_time": 4.80518102645874
+      }
+    },
+    {
+      "question": "Compare TechCorp's North America revenue to Europe revenue in 2023.",
+      "query_tokens": 10,
+      "output_tokens": 1032,
+      "num_chunks": 10,
+      "metrics": {
+        "precision@5": 1.0,
+        "recall@5": 5.0,
+        "f1@5": 1.6666666666666667,
+        "precision@10": 0.6,
+        "recall@10": 6.0,
+        "f1@10": 1.0909090909090908,
+        "ndcg@5": 1.0,
+        "ndcg@10": 0.9876712785649564,
+        "map": 5.75
+      },
+      "timing": {
+        "step1_time": 0.00797724723815918,
+        "step2_time": 0.0005466938018798828,
+        "step3_time": 3.184892416000366,
+        "step4_time": 0.002698183059692383,
+        "total_time": 3.1965603828430176
+      }
+    },
+    {
+      "question": "What was GlobalBank's total revenue in 2023?",
+      "query_tokens": 7,
+      "output_tokens": 927,
+      "num_chunks": 10,
+      "metrics": {
+        "precision@5": 0.4,
+        "recall@5": 2.0,
+        "f1@5": 0.6666666666666667,
+        "precision@10": 0.4,
+        "recall@10": 4.0,
+        "f1@10": 0.7272727272727273,
+        "ndcg@5": 0.8772153153380493,
+        "ndcg@10": 0.8061503743503469,
+        "map": 2.373015873015873
+      },
+      "timing": {
+        "step1_time": 0.011581897735595703,
+        "step2_time": 0.0007877349853515625,
+        "step3_time": 3.293684720993042,
+        "step4_time": 0.002496480941772461,
+        "total_time": 3.308988332748413
+      }
+    },
+    {
+      "question": "What was GlobalBank's Q4 2023 net income?",
+      "query_tokens": 7,
+      "output_tokens": 790,
+      "num_chunks": 10,
+      "metrics": {
+        "precision@5": 0.6,
+        "recall@5": 3.0,
+        "f1@5": 0.9999999999999999,
+        "precision@10": 0.4,
+        "recall@10": 4.0,
+        "f1@10": 0.7272727272727273,
+        "ndcg@5": 1.0,
+        "ndcg@10": 0.9619991470595832,
+        "map": 3.571428571428571
+      },
+      "timing": {
+        "step1_time": 0.010601520538330078,
+        "step2_time": 0.0007712841033935547,
+        "step3_time": 3.2352421283721924,
+        "step4_time": 0.0024955272674560547,
+        "total_time": 3.249511957168579
+      }
+    },
+    {
+      "question": "What was GlobalBank's return on equity (ROE) in 2023?",
+      "query_tokens": 9,
+      "output_tokens": 875,
+      "num_chunks": 10,
+      "metrics": {
+        "precision@5": 0.6,
+        "recall@5": 3.0,
+        "f1@5": 0.9999999999999999,
+        "precision@10": 0.4,
+        "recall@10": 4.0,
+        "f1@10": 0.7272727272727273,
+        "ndcg@5": 1.0,
+        "ndcg@10": 0.9447176050778178,
+        "map": 3.4
+      },
+      "timing": {
+        "step1_time": 0.012339353561401367,
+        "step2_time": 0.0008022785186767578,
+        "step3_time": 3.33343505859375,
+        "step4_time": 0.0013668537139892578,
+        "total_time": 3.3484325408935547
+      }
+    },
+    {
+      "question": "What was Retail Solutions' Q3 2023 total revenue?",
+      "query_tokens": 8,
+      "output_tokens": 1007,
+      "num_chunks": 10,
+      "metrics": {
+        "precision@5": 0.8,
+        "recall@5": 4.0,
+        "f1@5": 1.3333333333333335,
+        "precision@10": 0.4,
+        "recall@10": 4.0,
+        "f1@10": 0.7272727272727273,
+        "ndcg@5": 1.0,
+        "ndcg@10": 1.0,
+        "map": 4.0
+      },
+      "timing": {
+        "step1_time": 0.010377168655395508,
+        "step2_time": 0.0007581710815429688,
+        "step3_time": 4.481847047805786,
+        "step4_time": 0.0011947154998779297,
+        "total_time": 4.494589328765869
+      }
+    },
+    {
+      "question": "What is Retail Solutions' Annual Recurring Revenue (ARR) as of Q3 2023?",
+      "query_tokens": 12,
+      "output_tokens": 945,
+      "num_chunks": 10,
+      "metrics": {
+        "precision@5": 0.8,
+        "recall@5": 4.0,
+        "f1@5": 1.3333333333333335,
+        "precision@10": 0.6,
+        "recall@10": 6.0,
+        "f1@10": 1.0909090909090908,
+        "ndcg@5": 1.0,
+        "ndcg@10": 0.958080399528401,
+        "map": 5.225
+      },
+      "timing": {
+        "step1_time": 0.009907960891723633,
+        "step2_time": 0.0005841255187988281,
+        "step3_time": 5.062958717346191,
+        "step4_time": 0.002590656280517578,
+        "total_time": 5.076561212539673
+      }
+    },
+    {
+      "question": "Calculate Retail Solutions' subscription revenue growth rate in Q3 2023.",
+      "query_tokens": 10,
+      "output_tokens": 991,
+      "num_chunks": 10,
+      "metrics": {
+        "precision@5": 0.8,
+        "recall@5": 4.0,
+        "f1@5": 1.3333333333333335,
+        "precision@10": 0.4,
+        "recall@10": 4.0,
+        "f1@10": 0.7272727272727273,
+        "ndcg@5": 1.0,
+        "ndcg@10": 1.0,
+        "map": 4.0
+      },
+      "timing": {
+        "step1_time": 0.0081329345703125,
+        "step2_time": 0.0006377696990966797,
+        "step3_time": 4.401529312133789,
+        "step4_time": 0.0012030601501464844,
+        "total_time": 4.411946058273315
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Smart Aggregation for RAG - Dependencies
+# ==========================================
+
+# Core ML/NLP libraries
+numpy>=1.24.0
+torch>=2.0.0
+sentence-transformers>=2.2.0
+transformers>=4.30.0
+
+# Vector database
+faiss-cpu>=1.7.4
+
+# Utilities
+scikit-learn>=1.3.0
+tqdm>=4.65.0
+
+# For FinanceBench dataset (optional but recommended)
+pandas>=2.0.0
+pdfplumber>=0.9.0
+
+# Alternative PDF library (lighter weight)
+# pypdf>=3.0.0
+
+# For visualization (recommended for enhanced demo)
+matplotlib>=3.7.0
