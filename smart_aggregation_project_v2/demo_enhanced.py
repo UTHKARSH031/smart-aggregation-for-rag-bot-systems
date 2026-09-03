@@ -184,11 +184,15 @@ def create_visualizations(results, output_dir='results'):
     # -- 7. Per-query hit/miss heatmap across all 3 methods -------------------
     _plot_per_query_hits_heatmap(results, output_dir)
 
-    # -- 8. Method B per-query detail (tokens + cumulative accuracy) ----------
+    # -- 8. Method A per-query detail (tokens + cumulative accuracy) ----------
+    if 'method_a' in results:
+        _plot_method_a_per_query(results['method_a'], output_dir)
+
+    # -- 9. Method B per-query detail (tokens + cumulative accuracy) ----------
     if 'method_b' in results:
         _plot_method_b_per_query(results['method_b'], output_dir)
 
-    # -- 9. Method C per-query detail (tokens + diversity + cumulative acc) ---
+    # -- 10. Method C per-query detail (tokens + diversity + cumulative acc) --
     if 'method_c' in results:
         _plot_method_c_per_query(results['method_c'], output_dir)
 
@@ -463,6 +467,57 @@ def _plot_per_query_hits_heatmap(results, output_dir):
 
     plt.tight_layout()
     out = f'{output_dir}/per_query_hits_heatmap.png'
+    plt.savefig(out, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"[OK] Saved: {out}")
+
+
+def _plot_method_a_per_query(method_a_results, output_dir):
+    """Method A: per-query output tokens (hit/miss coloured) + running accuracy."""
+    det = method_a_results.get('detailed_results', [])
+    if not det:
+        return
+
+    n       = len(det)
+    queries = list(range(1, n + 1))
+    tokens  = [r.get('output_tokens', 0) for r in det]
+    hits    = [r.get('hit', 1 if r.get('metrics', {}).get('recall@10', 0) > 0 else 0) for r in det]
+    cum_acc = [sum(hits[:i + 1]) / (i + 1) * 100 for i in range(n)]
+    avg_tok = sum(tokens) / max(n, 1)
+    final_acc = method_a_results.get('accuracy', 0) * 100
+
+    bar_colors = [COLORS['method_a'] if h else '#DC2626' for h in hits]
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(max(14, n // 3), 8),
+                                    sharex=True)
+    fig.suptitle('Method A (Smart Aggregation MMR) — Per-Query Analysis',
+                 fontsize=14, fontweight='bold', y=1.01)
+
+    # Top: output tokens per query, coloured by hit/miss
+    ax1.bar(queries, tokens, color=bar_colors, alpha=0.85, edgecolor='black', linewidth=0.8)
+    ax1.axhline(y=avg_tok, color='black', linestyle='--', linewidth=1.5,
+                label=f'Avg: {int(avg_tok):,} tokens')
+    ax1.set_ylabel('Output Tokens', fontsize=11, fontweight='bold')
+    ax1.set_title('Output Tokens per Query  (blue = hit, red = miss)',
+                  fontsize=11, fontweight='bold')
+    ax1.grid(axis='y', alpha=0.3, linestyle='--')
+    ax1.legend(fontsize=9)
+
+    # Bottom: cumulative accuracy
+    ax2.plot(queries, cum_acc, marker='o', linewidth=2, markersize=4,
+             color=COLORS['method_a'], label='Running accuracy')
+    ax2.fill_between(queries, cum_acc, alpha=0.2, color=COLORS['method_a'])
+    ax2.axhline(y=final_acc, color='red', linestyle='--', linewidth=1.5,
+                label=f'Final: {final_acc:.1f}%')
+    ax2.set_xlabel('Question Index', fontsize=11, fontweight='bold')
+    ax2.set_ylabel('Cumulative Accuracy (%)', fontsize=11, fontweight='bold')
+    ax2.set_title('Running Accuracy', fontsize=11, fontweight='bold')
+    ax2.set_ylim(0, 110)
+    ax2.grid(alpha=0.3, linestyle='--')
+    ax2.legend(fontsize=9)
+
+    plt.tight_layout()
+    out = f'{output_dir}/method_a_per_query_details.png'
     plt.savefig(out, dpi=300, bbox_inches='tight')
     plt.close()
     print(f"[OK] Saved: {out}")
@@ -791,8 +846,9 @@ def main():
               f"NDCG@5: {metrics['ndcg@5']:.3f}  "
               f"OutputTokens: {out_tok}")
 
+        hit_a = 1 if metrics.get('recall@10', 0) > 0 else 0
         results_a.append({'question': q_data['question'], 'output_tokens': out_tok,
-                           'metrics': metrics, 'timing': stats,
+                           'metrics': metrics, 'hit': hit_a, 'timing': stats,
                            'latency': stats.get('total_time', 0)})
 
     avg_out_a = total_out_a / max(len(questions), 1)

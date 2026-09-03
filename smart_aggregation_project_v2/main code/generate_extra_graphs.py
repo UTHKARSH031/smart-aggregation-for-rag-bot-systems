@@ -89,6 +89,57 @@ def _plot_per_query_hits_heatmap(results, output_dir):
     print(f"[OK] Saved: {out}")
 
 
+def _plot_method_a_per_query(method_a_results, output_dir):
+    """Method A: per-query output tokens (hit/miss coloured) + running accuracy."""
+    det = method_a_results.get('detailed_results', [])
+    if not det:
+        print("  [SKIP] No detailed_results for Method A.")
+        return
+
+    n         = len(det)
+    queries   = list(range(1, n + 1))
+    tokens    = [r.get('output_tokens', 0) for r in det]
+    hits      = [r.get('hit', 1 if r.get('metrics', {}).get('recall@10', 0) > 0 else 0) for r in det]
+    cum_acc   = [sum(hits[:i + 1]) / (i + 1) * 100 for i in range(n)]
+    avg_tok   = sum(tokens) / max(n, 1)
+    final_acc = method_a_results.get('accuracy', 0) * 100
+
+    bar_colors = [COLORS['method_a'] if h else '#DC2626' for h in hits]
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(max(14, n // 3), 8), sharex=True)
+    fig.suptitle('Method A (Smart Aggregation MMR) — Per-Query Analysis',
+                 fontsize=14, fontweight='bold', y=1.01)
+
+    # Top: output tokens per query, coloured by hit/miss
+    ax1.bar(queries, tokens, color=bar_colors, alpha=0.85, edgecolor='black', linewidth=0.8)
+    ax1.axhline(y=avg_tok, color='black', linestyle='--', linewidth=1.5,
+                label=f'Avg: {int(avg_tok):,} tokens')
+    ax1.set_ylabel('Output Tokens', fontsize=11, fontweight='bold')
+    ax1.set_title('Output Tokens per Query  (blue = hit, red = miss)',
+                  fontsize=11, fontweight='bold')
+    ax1.grid(axis='y', alpha=0.3, linestyle='--')
+    ax1.legend(fontsize=9)
+
+    # Bottom: cumulative accuracy
+    ax2.plot(queries, cum_acc, marker='o', linewidth=2, markersize=4,
+             color=COLORS['method_a'], label='Running accuracy')
+    ax2.fill_between(queries, cum_acc, alpha=0.2, color=COLORS['method_a'])
+    ax2.axhline(y=final_acc, color='red', linestyle='--', linewidth=1.5,
+                label=f'Final: {final_acc:.1f}%')
+    ax2.set_xlabel('Question Index', fontsize=11, fontweight='bold')
+    ax2.set_ylabel('Cumulative Accuracy (%)', fontsize=11, fontweight='bold')
+    ax2.set_title('Running Accuracy', fontsize=11, fontweight='bold')
+    ax2.set_ylim(0, 110)
+    ax2.grid(alpha=0.3, linestyle='--')
+    ax2.legend(fontsize=9)
+
+    plt.tight_layout()
+    out = f'{output_dir}/method_a_per_query_details.png'
+    plt.savefig(out, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"[OK] Saved: {out}")
+
+
 def _plot_method_b_per_query(method_b_results, output_dir):
     """Method B: per-query output tokens (hit/miss coloured) + running accuracy."""
     det = method_b_results.get('detailed_results', [])
@@ -229,9 +280,10 @@ def main():
     print(f"\nDataset  : {results.get('dataset', '?')}")
     print(f"Docs     : {results.get('num_documents', '?')}")
     print(f"Questions: {results.get('num_questions_tested', '?')}")
-    print(f"\nGenerating 3 new graphs...\n")
+    print(f"\nGenerating extra graphs...\n")
 
     _plot_per_query_hits_heatmap(results, output_dir)
+    _plot_method_a_per_query(results.get('method_a', {}), output_dir)
     _plot_method_b_per_query(results.get('method_b', {}), output_dir)
     _plot_method_c_per_query(results.get('method_c', {}), output_dir)
 
